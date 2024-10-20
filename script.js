@@ -713,7 +713,7 @@ function sendMessage() {
             }
         })
         .catch(error => {
-            chatLog.innerHTML += `<p>Sorry, there was an error with the chatbot.</p>`;
+            chatLog.innerHTML += `<p>Sorry, the chatbot is under maintainance.</p>`;
         });
 
         // Clear the input field after sending the message
