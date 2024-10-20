@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <!-- Video Embed (centered) -->
                 <div style="text-align: center; margin: 30px 0;">
                     <video width="60%" controls>
-                        <source src="smart-home-demo.mp4" type="video/mp4">
+                        <source src="video-demo-link.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <!-- Video Embed (centered) -->
                 <div style="text-align: center; margin: 30px 0;">
                     <video width="60%" controls>
-                        <source src="smart-home-demo.mp4" type="video/mp4">
+                        <source src="video-demo-link.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -470,7 +470,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <!-- Video Embed (centered) -->
                 <div style="text-align: center; margin: 30px 0;">
                     <video width="60%" controls>
-                        <source src="smart-home-demo.mp4" type="video/mp4">
+                        <source src="video-demo-link.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
