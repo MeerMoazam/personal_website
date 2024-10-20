@@ -83,7 +83,7 @@ def chat():
         return jsonify({'answer': response})
     except Exception as e:
         print(f"Error: {e}")
-        return jsonify({'answer': 'Sorry, there was an error with the chatbot.'})
+        return jsonify({'answer': 'Sorry, the chatbot is under maintainance.'})
 
 if __name__ == '__main__':
     app.run(debug=True, port=5500)
