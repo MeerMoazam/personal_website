@@ -155,12 +155,15 @@
 
             <!-- Chat Window -->
             <div id="chat-window" class="chatbox">
-                <div id="chat-log" class="chatbox-window"></div>  <!-- Chat messages will appear here -->
+                <div id="chat-log" class="chatbox-window">
+                    <!-- Friendly Welcome Message -->
+                    <p class="welcome-message"><strong>Chatbot:</strong> Hi! I’m your personal portfolio assistant. Ask me about my projects or experience!</p>
+                </div>
 
                 <!-- User Input and Send Button -->
                 <div class="chatbox-input">
-                    <input type="text" id="user-input" class="form-control" placeholder="Ask anything about me!">
-                    <button onclick="sendMessage()" class="btn btn-info mt-3">Send</button>
+                    <input type="text" id="user-input" class="form-control" placeholder="Ask me anything about me!">
+                    <button id="send-btn" onclick="sendMessage()" class="btn btn-info mt-3">Send</button>
                 </div>
             </div>
         </div>
