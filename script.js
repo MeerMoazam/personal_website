@@ -698,22 +698,25 @@ function sendMessage() {
         chatLog.innerHTML += `<p><strong>You:</strong> ${input}</p>`;
 
         // Send user query to the Python backend
-        fetch('http://localhost:5500/chat', {  // Ensure the correct URL and POST method here
+        fetch('http://localhost:5500/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ query: input })  // Pass the user's query as JSON
+            body: JSON.stringify({ query: input })
         })
         .then(response => response.json())
         .then(data => {
-            // Display chatbot's response in the chat log
             if (data.answer) {
-                chatLog.innerHTML += `<p><strong>Chatbot:</strong> ${data.answer}</p>`;
+                // Animate the chatbot response with a fade-in effect
+                chatLog.innerHTML += `<p class="chatbot-response"><strong>Chatbot:</strong> ${data.answer}</p>`;
+                chatLog.scrollTop = chatLog.scrollHeight; // Scroll to the bottom
             } else {
-                chatLog.innerHTML += `<p><strong>Chatbot:</strong> I don't know the answer. Please leave feedback here.</p>`;
+                chatLog.innerHTML += `<p class="chatbot-response"><strong>Chatbot:</strong> I don't know the answer. Please leave feedback here.</p>`;
+                chatLog.scrollTop = chatLog.scrollHeight; // Scroll to the bottom
             }
         })
         .catch(error => {
-            chatLog.innerHTML += `<p>Sorry, the chatbot is under maintainance.</p>`;
+            chatLog.innerHTML += `<p><strong>Chatbot:</strong> Sorry, there was an error with the chatbot.</p>`;
+            chatLog.scrollTop = chatLog.scrollHeight; // Scroll to the bottom
         });
 
         // Clear the input field after sending the message
@@ -728,7 +731,6 @@ document.getElementById("user-input").addEventListener("keypress", function(even
         sendMessage();  // Call the sendMessage function
     }
 });
-
 
 // Ideas Board: Add Ideas Dynamically
 function addIdea() {
