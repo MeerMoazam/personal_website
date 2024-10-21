@@ -11,6 +11,27 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
+/* Center content in each section */
+section {
+    display: flex;
+    justify-content: center;  /* Horizontally center the content */
+    align-items: center;  /* Vertically center the content */
+    min-height: 100vh;  /* Make each section take up full viewport height */
+    padding: 150px 20px;  /* Add some padding for visual spacing */
+}
+
+/* Adjust body padding to account for the fixed navbar */
+body {
+    scroll-behavior: smooth;  /* Smooth scrolling when navigating */
+    padding-top: 70px;  /* Prevent content from hiding under navbar */
+}
+
+h2 {
+    color: #ffcc00;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
 /* Navigation Bar */
 .navbar {
     position: fixed; /* Fixes the navbar at the top */
@@ -51,7 +72,6 @@ body {
 
 /* About Me Section */
 .about-section {
-    padding: 60px 20px;
     height: auto; /* Full window height */
     display: flex;
     align-items: start;
@@ -177,7 +197,6 @@ body {
 
 /* CV Section */
 .cv-section {
-    padding: 60px 20px;
     background-color: rgba(0, 0, 0, 0.393);
     color: #ffffff;
     text-align: center;
@@ -387,7 +406,6 @@ body {
 
 /* Chatbot Section Styling */
 #chatbot {
-    margin-top: 50px; /* Space between CV and chatbot */
     opacity: 0;
     transform: translateY(50px);  /* Move it slightly down */
     transition: opacity 0.8s ease, transform 0.8s ease;  /* Smooth transition */
@@ -487,7 +505,6 @@ body {
 
 /* Spacing between sections */
 .showcase-section {
-    margin-top: 50px;  /* Adds space between this section and the previous one */
     animation: fadeInUp 1s ease-out;  /* Add animation on scroll */
 }
 
