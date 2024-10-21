@@ -13,8 +13,18 @@ body {
 
 /* Navigation Bar */
 .navbar {
-    background-color: rgba(0, 0, 0, 0);
-    padding: 1em;
+    position: fixed; /* Fixes the navbar at the top */
+    top: 0; /* Aligns it to the top of the viewport */
+    width: 100%; /* Ensures the navbar spans the full width */
+    z-index: 1000; /* Ensures the navbar stays on top of other content */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a shadow for visual separation */
+}
+
+/* Ensure body content doesn’t go under the navbar */
+body {
+    padding-top: 70px; /* Adjust this value based on the height of your navbar */
 }
 
 .navbar ul {
