@@ -9,6 +9,7 @@ body {
     background-attachment: fixed;
     color: #ffffff;
     transition: all 0.3s ease-in-out;
+    background-repeat: no-repeat;
 }
 
 /* Center content in each section */
