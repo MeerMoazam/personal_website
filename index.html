@@ -238,6 +238,15 @@
     </footer>
 
     <script>
+        // Listen to the scroll event and update the background position
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;  // Get the vertical scroll position
+            const speed = 0.01;  // Adjust this value to control how fast the background moves
+
+            // Move the background slightly as the user scrolls
+            document.body.style.backgroundPositionY = `${scrollPosition * speed}px`;
+        });
+        
        // Canvas for Vertical Line with Center Animation
        const canvas = document.getElementById('lineCanvas');
         const ctx = canvas.getContext('2d');
