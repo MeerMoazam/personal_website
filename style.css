@@ -20,6 +20,11 @@ section {
     padding: 150px 20px;  /* Add some padding for visual spacing */
 }
 
+/* Paragraph Text */
+p, .section-content {
+    color: #dddcdc;  /* Slightly softer white for body text */
+}
+
 /* Adjust body padding to account for the fixed navbar */
 body {
     scroll-behavior: smooth;  /* Smooth scrolling when navigating */
