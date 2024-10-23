@@ -58,94 +58,137 @@
         </div>
     </section>
 
-    <!-- CV Section -->
+   <!-- CV Section -->
     <section id="cv" class="cv-section">
         <div class="container">
-            <!-- Name and Contact Info -->
-            <h2 class="text-center animate-cv-header">John Doe</h2>
-            <p class="text-center small-details animate-cv-header">John Doe · 2000 · +123 456 7890 · <a href="https://www.linkedin.com/in/moazam-khan-lohach-960142196/" target="_blank">LinkedIn</a></p>
+            <!-- Header with Resume -->
+            <div class="cv-header">
+                <h2 class="left-align">John Doe's Resume</h2>
+                <a href="resume.pdf" class="btn btn-primary right-align" download>Download Resume</a>
+            </div>
 
-            <!-- Bio -->
-            <p class="text-center bio animate-cv-bio">Aspiring graduate student with a dual major in Computer Engineering and Physics, interested in machine learning, cybersecurity, data visualization, robotics, and quantum computing.</p>
-
-            <!-- CV Content -->
-            <div class="cv-content">
-                <!-- Education Section -->
-                <div class="cv-section-item">
-                    <h3 class="cv-section-title">Education</h3>
-                    <div class="cv-section-header animate-expand-content">
-                        <p>University of California, Berkeley</p>
-                        <p>Bachelor of Science in Data Science & Physics · 2019 - May 2023</p>
-                        <p>GPA: 3.90/4.00</p>
-                        <ul>
-                            <li>Relevant Coursework: Algebra, Geometry, Statistics, Robots, Penetration tools</li>
-                        </ul>
-                        <img src="uc-berkeley.jpg" alt="UC Berkeley" class="subpage-image">
+            <!-- Education Section -->
+            <div class="cv-section-item">
+                <h3 class="cv-section-title">Education</h3>
+                <hr class="section-line">
+                <div class="cv-section-content">
+                    <div class="left-align">
+                        <a href="#" class="clickable-title" onclick="openPopup('education-popup')">University of California, Berkeley</a>
+                        <p>Bachelor of Science in Data Science & Physics</p>
+                    </div>
+                    <div class="right-align">
+                        <p>Anticipated Graduation: Dec 2024</p>
+                        <p>Comutative CGPA: 3.40/4.00</p>
                     </div>
                 </div>
+            </div>
 
-                <!-- Internships Section -->
-                <div class="cv-section-item">
-                    <h3 class="cv-section-title">Internships</h3>
-                    <div class="cv-section-header animate-expand-content">
-                        <p>Tech Innovators Inc. · Data Analyst Intern</p>
-                        <p>August 2023 - Present</p>
+            <!-- Experience Section -->
+            <div class="cv-section-item">
+                <h3 class="cv-section-title">Experience</h3>
+                <hr class="section-line">
+                <div class="cv-section-content">
+                    <div class="left-align">
+                        <a href="#" class="clickable-title" onclick="openPopup('experience-popup')">Data Analyst Intern at Tech Innovators</a>
+                    </div>
+                    <div class="right-align">
+                        <p>June 2024 - July 2024</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Internships Section -->
+            <div class="cv-section-item">
+                <h3 class="cv-section-title">Internships</h3>
+                <hr class="section-line">
+                <div class="cv-section-content">
+                    <div class="left-align">
+                        <a href="#" class="clickable-title" onclick="openPopup('internships-popup')">Tech Innovators Inc. · Data Analyst Intern</a>
                         <ul>
                             <li>Analyzed large datasets to extract actionable insights for product development teams</li>
                             <li>Created comprehensive data visualizations to support strategic decision-making</li>
                             <li>Collaborated with cross-functional teams to optimize data processes and reporting frameworks</li>
                         </ul>
-                        <img src="data-analytics.jpg" alt="Data Analytics" class="subpage-image">
                     </div>
-                </div>
-
-                <!-- Projects Section -->
-                <div class="cv-section-item">
-                    <h3 class="cv-section-title">Projects</h3>
-                    <div class="cv-section-header animate-expand-content">
-                        <p>Smart Home Automation System, UC Berkeley</p>
-                        <p>Spring 2023</p>
-                        <ul>
-                            <li>Developed a web-based home automation platform using Raspberry Pi and Arduino</li>
-                            <li>Implemented machine learning algorithms for predictive energy management</li>
-                        </ul>
-                        <img src="smart-home-automation.jpeg" alt="Smart Home Automation" class="subpage-image">
-                        <p>Watch the demo video: <a href="video-demo-link.mp4" target="_blank">Demo Video</a></p>
+                    <div class="right-align">
+                        <p>August 2023 - Present</p>
                     </div>
-                </div>
-
-                <!-- Presentations Section -->
-                <div class="cv-section-item">
-                    <h3 class="cv-section-title">Presentations</h3>
-                    <div class="cv-section-header animate-expand-content">
-                        <p>Robotics in Everyday Life: Enhancements and Challenges</p>
-                        <p>Berkeley | Spring 2022</p>
-                    </div>
-                </div>
-
-                <!-- Skills Section -->
-                <div class="cv-section-item">
-                    <h3 class="cv-section-title">Skills</h3>
-                    <ul class="animate-expand-content">
-                        <li>Languages: Python, Java, C++, HTML/CSS, JavaScript, R, SQL</li>
-                        <li>Frameworks & Tools: TensorFlow, Keras, Unity, Docker, Git, Tableau, Raspberry Pi, Arduino, MATLAB, Wireshark, AWS, VirtualBox</li>
-
-                        <div class="skills-images">
-                            <img src="python-logo.png" alt="Python" class="skills-logo">
-                            <img src="java-logo.png" alt="Java" class="skills-logo">
-                            <img src="javascript-logo.png" alt="JavaScript" class="skills-logo">
-                            <!-- Add more skill logos as needed -->
-                        </div>
-                    </ul>
                 </div>
             </div>
 
-            <!-- Download Resume Button -->
-            <div class="resume-download-button">
-                <a href="resume.pdf" class="btn btn-primary" download>Download Resume</a>
+            <!-- Presentations Section -->
+            <div class="cv-section-item">
+                <h3 class="cv-section-title">Presentations</h3>
+                <hr class="section-line">
+                <div class="cv-section-content">
+                    <div class="left-align">
+                        <a href="#" class="clickable-title" onclick="openPopup('presentations-popup')">Robotics in Everyday Life: Enhancements and Challenges</a></br>
+                        <a href="#" class="clickable-title" onclick="openPopup('presentations-popup')">Berkeley | Spring 2022</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="cv-section-item">
+                <h3 class="cv-section-title">Skills</h3>
+                <hr class="section-line">
+                <div class="cv-section-content">
+                    <div class="left-align">
+                        <ul>
+                            <li>Languages: Python, Java, C++, HTML/CSS, JavaScript, R, SQL</li>
+                            <li>Frameworks & Tools: TensorFlow, Keras, Unity, Docker, Git, Tableau, Raspberry Pi, Arduino, MATLAB, Wireshark, AWS, VirtualBox</li>
+    
+                            <div class="skills-images">
+                                <img src="python-logo.png" alt="Python" class="skills-logo">
+                                <img src="java-logo.png" alt="Java" class="skills-logo">
+                                <img src="javascript-logo.png" alt="JavaScript" class="skills-logo">
+                                <!-- Add more skill logos as needed -->
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Section -->
+            <div class="cv-section-item">
+                <h3 class="cv-section-title">Projects</h3>
+                <hr class="section-line">
+                <div class="cv-projects-grid">
+                    <!-- First Project -->
+                    <div class="cv-project">
+                        <div class="cv-project-image">
+                            <img src="smart-home-automation.jpeg" alt="Project 1">
+                        </div>
+                        <div class="cv-project-content">
+                            <a href="#" class="clickable-title" onclick="openPopup('project1-popup')">Smart Home Automation System</a>
+                            <p>Spring 2023</p>
+                            <ul>
+                                <li>Developed a web-based home automation platform using Raspberry Pi and Arduino</li>
+                                <li>Implemented machine learning algorithms for predictive energy management</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Second Project -->
+                    <div class="cv-project">
+                        <div class="cv-project-image">
+                            <img src="project2.jpg" alt="Project 2">
+                        </div>
+                        <div class="cv-project-content">
+                            <a href="#" class="clickable-title" onclick="openPopup('project2-popup')">Blockchain Decentralized Finance</a>
+                            <p>Built a decentralized finance system using blockchain technology...</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Popup Window -->
+    <div id="popup-window">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <div id="popup-content"></div>
+    </div>
 
     <!-- Chatbot Section -->
     <section id="chatbot" class="chatbot-section">
@@ -284,86 +327,6 @@
 
         // Start the line drawing animation from the center
         drawLine();
-
-        // Expand/Collapse CV Sections
-        const sectionHeaders = document.querySelectorAll('.cv-section-item h3');
-        sectionHeaders.forEach(header => {
-            header.addEventListener('click', function () {
-                const content = this.nextElementSibling;
-                if (content.style.display === 'block') {
-                    content.style.display = 'none';
-                    this.querySelector(':before').textContent = '▼'; // Collapse arrow
-                } else {
-                    content.style.display = 'block';
-                    this.querySelector(':before').textContent = '▲'; // Expand arrow
-                }
-            });
-        });
-
-        // Scroll-triggered animations for CV section
-        const cvSection = document.querySelector('.cv-section');
-        const cvHeaders = document.querySelectorAll('.animate-cv-header');
-        const profileImage = document.querySelector('.animate-cv-profile');
-        const bioText = document.querySelector('.animate-cv-bio');
-
-        // Observer options to detect when the CV section is in view
-        const observerOptions = {
-            root: null,
-            threshold: 0.3, // Trigger when 30% of the CV section is in view
-        };
-
-        // IntersectionObserver to trigger animations when the user scrolls to the CV section
-        const cvObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Trigger animations
-                    cvSection.classList.add('cv-visible');
-                    cvHeaders.forEach(header => header.classList.add('cv-header-visible'));
-                    profileImage.classList.add('cv-profile-visible');
-                    bioText.classList.add('cv-bio-visible');
-                } else {
-                    // Reset animations when the section is out of view
-                    cvSection.classList.remove('cv-visible');
-                    cvHeaders.forEach(header => header.classList.remove('cv-header-visible'));
-                    profileImage.classList.remove('cv-profile-visible');
-                    bioText.classList.remove('cv-bio-visible');
-                }
-            });
-        }, observerOptions);
-
-        // Start observing the CV section
-        cvObserver.observe(cvSection);
-
-        // Expand/Collapse CV Sections with animations
-        const sectionTitles = document.querySelectorAll('.cv-section-title');
-        sectionTitles.forEach(title => {
-            title.addEventListener('click', function () {
-                const content = this.nextElementSibling;
-                content.classList.toggle('expand-visible'); // Expand/collapse the section
-                this.classList.toggle('expanded'); // Rotate arrow
-
-                // Trigger animation only when expanding (not collapsing)
-                if (content.classList.contains('expand-visible')) {
-                    content.style.opacity = 0; // Ensure it's hidden first
-                    content.style.height = 'auto'; // Set height for animation
-                    const height = content.scrollHeight + 'px'; // Get full height
-                    content.style.height = 0; // Start from 0 height
-
-                    // Add animation delay to ensure smooth transition
-                    setTimeout(() => {
-                        content.style.height = height; // Expand to full height
-                        content.style.opacity = 1; // Fade in content
-                    }, 10);
-                } else {
-                    // Collapse with animation
-                    content.style.height = content.scrollHeight + 'px'; // Set current height
-                    setTimeout(() => {
-                        content.style.height = 0; // Collapse to 0 height
-                        content.style.opacity = 0; // Fade out content
-                    }, 10);
-                }
-            });
-        });
 
         // Function to check if an element is in the viewport
         function isElementInViewport(el) {
