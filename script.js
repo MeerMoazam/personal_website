@@ -688,6 +688,91 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+let previousScrollY = 0;
+/// Popup Functionality
+function openPopup(popupId) {
+    const popup = document.getElementById('popup-window');
+    const popupContent = document.getElementById('popup-content');
+
+    // Save the current scroll position
+    previousScrollY = window.scrollY;
+    
+    // Set content based on popupId
+    let content = '';
+    if (popupId === 'education-popup') {
+        content = `
+            <img src="uc-berkeley.jpg" alt="University Image" style="width:100%; margin-top:20px;">
+            <h3>University of California, Berkeley</h3>
+            <p>Details about University of California, Berkeley.</p>
+            <p>Anticipated Graduation: Dec 2024</p>
+            <p>CGPA: 3.40/4.00</p>
+        `;
+    } else if (popupId === 'experience-popup') {
+        content = `
+            <img src="data-analytics.jpg" alt="Experience Image" style="width:100%; margin-top:20px;">
+            <h3>Data Analyst Intern at Tech Innovators</h3>
+            <p>Details about the Data Analyst position.</p>
+            <p>Duration: June 2024 - July 2024</p>
+        `;
+    } else if (popupId === 'internships-popup') {
+        content = `
+            <img src="data-analytics.jpg" alt="Experience Image" style="width:100%; margin-top:20px;">
+            <h3>Data Analyst Intern at Tech Innovators</h3>
+            <p>Details about the Data Analyst position.</p>
+            <p>Duration: June 2024 - July 2024</p>
+        `;
+    } else if (popupId === 'presentations-popup') {
+        content = `
+            <img src="data-analytics.jpg" alt="Experience Image" style="width:100%; margin-top:20px;">
+            <h3>Data Analyst Intern at Tech Innovators</h3>
+            <p>Details about the Data Analyst position.</p>
+            <p>Duration: June 2024 - July 2024</p>
+        `;
+    } else if (popupId === 'project1-popup') {
+        content = `
+            <h3>Smart Home Automation System</h3>
+            <img src="smart-home-automation.jpeg" alt="Project Image" style="width:100%; margin-top:20px;">
+            <p>Details about the Smart Home Automation project.</p>
+            <p>Watch the demo video: <a href="video-demo-link.mp4" target="_blank">Demo Video</a></p>
+        `;
+    } else if (popupId === 'project2-popup') {
+        content = `
+            <h3>Blockchain Decentralized Finance</h3>
+            <img src="blockchain.jpeg" alt="Blockchain Image" style="width:100%; margin-top:20px;">
+            <p>Details about the Blockchain DeFi project.</p>
+            <p>Watch the demo video: <a href="video-demo-link.mp4" target="_blank">Demo Video</a></p>
+        `;
+    }
+
+    popupContent.innerHTML = content;
+    popup.style.display = 'block';
+
+    // Prevent scrolling to the top when the popup opens
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${previousScrollY}px`; // Keep it at the same scroll position
+}
+
+// Close Popup and restore scrolling behavior
+function closePopup() {
+    document.getElementById('popup-window').style.display = 'none';
+    
+    // Restore the original scroll position
+    document.body.style.position = '';
+    document.body.style.top = '';
+    window.scrollTo(0, previousScrollY);
+}
+
+// Scroll-triggered animations for CV section
+const cvSectionItems = document.querySelectorAll('.cv-section-item');
+window.addEventListener('scroll', () => {
+    cvSectionItems.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            item.classList.add('visible');
+        }
+    });
+});
+
 // Chatbot Query Handling
 function sendMessage() {
     const input = document.getElementById("user-input").value;
