@@ -203,102 +203,61 @@ body {
 
 /* CV Section */
 .cv-section {
+    width: 75%; /* Set CV section width to 75% of the container */
+    margin: 0 auto; /* Center align */
     background-color: rgba(0, 0, 0, 0.393);
     color: #ffffff;
-    text-align: center;
 }
 
-.cv-section h2 {
-    color: #ffcc00;
-    margin-bottom: 10px;
-    font-size: 2.5rem;
-}
-
-.small-details {
-    font-size: 0.9rem;
-    color: #ccc;
-}
-
-.bio {
-    margin-top: 20px;
+/* Header */
+.cv-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 40px;
-    font-size: 1.1rem;
-    color: #e6e6e6;
 }
 
-/* CV Sections */
-.cv-section-item {
-    margin-bottom: 40px;
+.left-align {
     text-align: left;
 }
 
-.cv-section-item h3 {
-    color: #ffcc00;
-    font-size: 1.8rem;
-    position: relative;
-    margin-bottom: 10px;
-    display: inline-block;
+.right-align {
+    text-align: right;
 }
 
-.cv-section-item .cv-section-header {
-    margin-left: 0px;
-}
-
-.cv-section-item ul {
-    color: #e6e6e6;
-    list-style: disc;
-    padding-left: 20px;
-}
-
-.cv-section-item ul li {
-    margin-bottom: 5px;
-}
-
-/* Horizontal line under section header */
-.cv-section-item h3:after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 3px;
+.section-line {
+    border: none;
+    height: 2px;
     background-color: #ffcc00;
-    margin-top: 10px;
+    margin: 10px 0;
 }
 
-/* Collapsible Arrow for expanding content */
-.cv-section-item h3:before {
-    content: '▼';
-    font-size: 1.2rem;
-    position: absolute;
-    right: -30px;
-    top: 5px;
+/* CV Content */
+.cv-section-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+/* Clickable Titles */
+.clickable-title {
+    color: #1e90ff;
+    text-decoration: underline;
     cursor: pointer;
 }
 
-/* Expandable content hidden by default */
-.cv-section-header {
-    display: none;
+.clickable-title:hover {
+    color: #ffcc00;
 }
 
-/* Two-column layout for larger screens */
-@media screen and (min-width: 992px) {
-    .cv-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .cv-section-item {
-        flex: 0 0 48%;
-        text-align: left;
-    }
-}
-
-/* Subpage Image */
-.subpage-image {
+/* Project Images */
+.project-image {
     width: 100%;
+    max-width: 150px;
     height: auto;
     border-radius: 10px;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 /* Skills Logos */
@@ -315,99 +274,108 @@ body {
     margin: 5px; /* Space between logos */
 }
 
-/* Positioning the Resume Download Button in the right-bottom corner */
-.cv-section {
-    position: relative; /* To allow absolute positioning inside */
+/* Project Columns */
+.cv-projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* Add space between projects */
 }
 
-.resume-download-button {
+.cv-project {
+    display: flex;
+    width: 48%; /* Ensure both columns are 48% for equal sizing */
+}
+
+.cv-project-image {
+    flex: 1;
+    padding-right: 20px; /* Add spacing between image and content */
+}
+
+.cv-project-image img {
+    width: 100%; /* Full width of its column */
+    border-radius: 10px;
+}
+
+.cv-project-content {
+    flex: 1;
+    text-align: left;
+}
+
+/* Popup Window */
+#popup-window {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 60%;
+    max-width: 450px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow: hidden; /* Ensure the scrollbar plate is hidden */
+}
+
+/* Popup Content with invisible scroll */
+#popup-content {
+    max-height: 70vh;
+    overflow-y: auto; /* Allow scrolling via mouse wheel */
+    padding-right: 20px; /* Add space to prevent content cutoff */
+}
+
+/* Hide scrollbar for all browsers */
+#popup-content::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome/Safari */
+}
+
+#popup-content {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.close-btn {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffcc00;
 }
 
-.btn-primary {
-    background-color: #ffcc00;
-    color: #000000;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+.close-btn:hover {
+    color: #ffdb4d;
 }
 
-.btn-primary:hover {
-    background-color: #ffdb4d;
-}
-
-/* CV Section Animation */
-.cv-section {
-    position: relative;
+/* Animations */
+.cv-section-item {
     opacity: 0;
-    transform: translateY(50px); /* Slide from below */
+    transform: translateY(30px);
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* Trigger when CV section is visible */
-.cv-visible {
-    opacity: 1;
-    transform: translateY(0); /* Back to normal */
-}
-
-/* Header Animations (Name, Details, etc.) */
-.animate-cv-header {
-    opacity: 0;
-    transform: translateY(-30px); /* Slide from above */
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.cv-header-visible {
-    opacity: 1;
-    transform: translateY(0); /* Back to normal */
-}
-
-/* Bio Animation */
-.animate-cv-bio {
-    transform: translateY(20px); /* Slide up */
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.cv-bio-visible {
+.cv-section-item.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Expandable content animations */
-.animate-expand-content {
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-    transition: height 0.6s ease, opacity 0.6s ease;
+/* Popup Animations */
+#popup-window {
+    animation: fadeIn 0.5s ease forwards;
 }
 
-.expand-visible {
-    opacity: 1;
-    height: auto;
-}
-
-/* Section titles */
-.cv-section-title {
-    cursor: pointer;
-    position: relative;
-}
-
-.cv-section-title::before {
-    content: '▼'; /* Arrow */
-    font-size: 1.2rem;
-    position: absolute;
-    right: -30px;
-    top: 5px;
-    transition: transform 0.3s ease;
-}
-
-.cv-section-title.expanded::before {
-    transform: rotate(180deg); /* Flip the arrow when expanded */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* Chatbot Section Styling */
