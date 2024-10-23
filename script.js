@@ -738,7 +738,7 @@ function openPopup(popupId) {
     } else if (popupId === 'project2-popup') {
         content = `
             <h3>Blockchain Decentralized Finance</h3>
-            <img src="blockchain.jpeg" alt="Blockchain Image" style="width:100%; margin-top:20px;">
+            <img src="blockchain-image1.webp" alt="Blockchain Image" style="width:100%; margin-top:20px;">
             <p>Details about the Blockchain DeFi project.</p>
             <p>Watch the demo video: <a href="video-demo-link.mp4" target="_blank">Demo Video</a></p>
         `;
