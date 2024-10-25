@@ -26,33 +26,68 @@
         </nav>
     </header>
 
-    <!-- About Me Section (Professional Layout) -->
+    <!-- About Me Section (Updated Professional Layout) -->
     <section id="about" class="about-section">
         <div class="container-fluid">
-            <div class="row align-items-start" style="height: 100vh;">
-                <!-- Left Column (Text) -->
-                <div class="col-md-5 text-left about-text">
-                    <h2 class="animate-fadeIn">About Me</h2>
-                    <p class="animate-fadeIn">
-                        Hello! I am a software developer with a passion for 
-                        <a href="ai.html" class="subpage-link">AI</a>, 
-                        <a href="blockchain.html" class="subpage-link">Blockchain</a>, 
-                        and <a href="arvr.html" class="subpage-link">AR/VR</a>. My interests span various areas of technology, including 3D printing and computational science.
+            <div class="row align-items-center" style="height: 100vh;">
+                <!-- Top Section: Introduction -->
+                <div class="col-md-12 text-center about-intro">
+                    <h2 id="typewriter-name">Hi, I'm John Doe</h2></br>
+                    <p id="typewriter-intro">I’m a technologist specializing in AI, cybersecurity, and blockchain development. With years of experience in the field, I am committed to leveraging emerging technologies to solve real-world problems.</p>
+                </div>
+                
+                <!-- Skill Cards Section -->
+                <div id="skills" class="col-md-12 text-center skills-section">
+                    <h3 class="animate-fadeIn">Skills & Technologies</h3>
+                    <!-- Left Arrow -->
+                    <button class="arrow-button left-arrow" onclick="scrollLeft()">&#8249;</button>
+                    <!-- Skill Icons Wrapper -->
+                    <div class="skill-icons">
+                        <div class="skill-card">
+                            <i class="fab fa-python"></i>
+                            <img src="python-logo.png" alt="Python" class="skills-logo">
+                            <p>Python</p>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fab fa-java"></i>
+                            <img src="java-logo.png" alt="Java" class="skills-logo">
+                            <p>Java</p>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-cubes"></i>
+                            <img src="javascript-logo.png" alt="JavaScript" class="skills-logo">
+                            <p>JavaScript</p>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-cubes"></i>
+                            <img src="blockchain-logo.svg" alt="JavaScript" class="skills-logo">
+                            <p>Blockchain</p>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <p>Cybersecurity</p>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fab fa-react"></i>
+                            <p>React</p>
+                        </div>
+                    </div>
+                    <!-- Right Arrow -->
+                    <button class="arrow-button right-arrow" onclick="scrollRight()">&#8250;</button>
+                </div>
+
+                <!-- Personal Story Section -->
+                <div class="col-md-12 text-center story-section">
+                    <p class="story-text">
+                        From my early fascination with AI to my deep dive into blockchain technologies, I’ve always been passionate about finding the intersection between code and real-world solutions. 
+                        I enjoy using my skills in cybersecurity, quantum computing, and networking to develop innovative solutions for tomorrow’s challenges.
                     </p>
-                    <p class="animate-fadeIn">With years of experience in the field, I am committed to leveraging emerging technologies to solve real-world problems.</p>
                 </div>
 
-                <!-- Middle Column (Canvas for Vertical Line) -->
-                <div class="col-md-1 text-center vertical-line-container">
-                    <canvas id="lineCanvas"></canvas>
-                </div>
-
-                <!-- Right Column (Image, Name, Designation, Quote) -->
-                <div class="col-md-6 text-center about-image-section">
-                    <img id="headshot-image" src="my-headshot.jpg" alt="Your Headshot" class="about-image animate-fadeInDown">
-                    <h3 class="owner-name animate-fadeInRight">John Doe</h3>
-                    <h4 class="owner-designation animate-fadeInRight">Senior Software Developer</h4>
-                    <blockquote class="owner-quote animate-fadeInRight">"Learning never exhausts the mind." - Leonardo da Vinci</blockquote>
+                <!-- Bottom Section: Call-to-Action -->
+                <div class="col-md-12 text-center cta-section">
+                    <a href="#cv" class="btn-cta">View My CV</a>
+                    <a href="#contact" class="btn-cta">Contact Me</a>
                 </div>
             </div>
         </div>
@@ -66,6 +101,8 @@
                 <h2 class="left-align">John Doe's Resume</h2>
                 <a href="resume.pdf" class="btn btn-primary right-align" download>Download Resume</a>
             </div>
+
+            <p class="text-center bio animate-cv-bio">Aspiring graduate student with a dual major in Computer Engineering and Physics, interested in machine learning, cybersecurity, data visualization, robotics, and quantum computing.</p>
 
             <!-- Education Section -->
             <div class="cv-section-item">
@@ -284,9 +321,9 @@
         // Listen to the scroll event and update the background position
         window.addEventListener('scroll', function() {
             const scrollPosition = window.scrollY;  // Get the vertical scroll position
-            const speed = 0.01;  // Adjust this value to control how fast the background moves
+            const speed = -0.1;  // Use a negative value to reverse the background scroll direction
 
-            // Move the background slightly as the user scrolls
+            // Move the background in the opposite direction as the user scrolls
             document.body.style.backgroundPositionY = `${scrollPosition * speed}px`;
         });
         
