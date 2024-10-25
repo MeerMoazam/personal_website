@@ -20,6 +20,7 @@ section {
     align-items: center;  /* Vertically center the content */
     min-height: 100vh;  /* Make each section take up full viewport height */
     padding: 100px 20px;  /* Add some padding for visual spacing */
+    overflow: auto;
 }
 
 /* Paragraph Text */
