@@ -60,7 +60,7 @@
                         </div>
                         <div class="skill-card">
                             <i class="fas fa-cubes"></i>
-                            <img src="blockchain-logo.svg" alt="Blockchain" class="skills-logo">
+                            <img src="blockchain-logo.svg" alt="JavaScript" class="skills-logo">
                             <p>Blockchain</p>
                         </div>
                         <div class="skill-card">
@@ -93,7 +93,7 @@
         </div>
     </section>
 
-   <!-- CV Section -->
+    <!-- CV Section -->
     <section id="cv" class="cv-section">
         <div class="container">
             <!-- Header with Resume -->
@@ -159,8 +159,10 @@
                 <hr class="section-line">
                 <div class="cv-section-content">
                     <div class="left-align">
-                        <a href="#" class="clickable-title" onclick="openPopup('presentations-popup')">Robotics in Everyday Life: Enhancements and Challenges</a></br>
-                        <a href="#" class="clickable-title" onclick="openPopup('presentations-popup')">Berkeley | Spring 2022</a>
+                        <a href="#" class="clickable-title" onclick="openPopup('presentations-popup')">Robotics in Everyday Life: Enhancements and Challenges</a>
+                    </div>
+                    <div class="right-align">
+                        <p>Berkeley | Spring 2022</p>
                     </div>
                 </div>
             </div>
@@ -226,6 +228,7 @@
         <span class="close-btn" onclick="closePopup()">&times;</span>
         <div id="popup-content"></div>
     </div>
+
 
     <!-- Chatbot Section -->
     <section id="chatbot" class="chatbot-section">
@@ -326,44 +329,6 @@
             // Move the background in the opposite direction as the user scrolls
             document.body.style.backgroundPositionY = `${scrollPosition * speed}px`;
         });
-        
-       // Canvas for Vertical Line with Center Animation
-       const canvas = document.getElementById('lineCanvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = 2;  // Set canvas width to 2px for a thin line
-        canvas.height = window.innerHeight;  // Set canvas height to the window's height
-
-        let lineHeightTop = 0;  // Height for the top part of the line
-        let lineHeightBottom = 0;  // Height for the bottom part of the line
-        const targetHeight = canvas.height / 2;  // Half of the height for the center animation
-
-        // Function to animate the line from the center
-        function drawLine() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);  // Clear the canvas
-            ctx.beginPath();
-
-            // Draw from the center upwards
-            ctx.moveTo(1, canvas.height / 2);
-            ctx.lineTo(1, canvas.height / 2 - lineHeightTop);
-
-            // Draw from the center downwards
-            ctx.moveTo(1, canvas.height / 2);
-            ctx.lineTo(1, canvas.height / 2 + lineHeightBottom);
-
-            ctx.strokeStyle = '#ffcc00';  // Line color
-            ctx.lineWidth = 2;
-            ctx.stroke();
-
-            // Increase the line height for both directions
-            if (lineHeightTop < targetHeight && lineHeightBottom < targetHeight) {
-                lineHeightTop += 5;  // Control the speed here
-                lineHeightBottom += 5;  // Control the speed here
-                requestAnimationFrame(drawLine);
-            }
-        }
-
-        // Start the line drawing animation from the center
-        drawLine();
 
         // Function to check if an element is in the viewport
         function isElementInViewport(el) {
@@ -388,6 +353,7 @@
 
         // Trigger handleScroll on page load in case the chatbot is already in view
         document.addEventListener('DOMContentLoaded', handleScroll);
+
 
         // Detect when the Showcase Section comes into view
         window.addEventListener('scroll', function() {
