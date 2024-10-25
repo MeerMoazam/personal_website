@@ -688,6 +688,75 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Function to type text character by character
+function typeText(element, text, speed, callback) {
+    let i = 0;
+    const interval = setInterval(() => {
+        element.textContent += text[i];
+        i++;
+        if (i === text.length) {
+            clearInterval(interval);
+            if (callback) callback(); // Trigger next typing effect after completion
+        }
+    }, speed);
+}
+
+// Function to initiate the typing sequence
+function startTypewriterEffect() {
+    // Type the name first
+    const nameElement = document.getElementById("typewriter-name");
+    const nameText = nameElement.textContent;
+    nameElement.textContent = ""; // Clear initial text for typing effect
+
+    // Type the intro paragraph after the name
+    const introElement = document.getElementById("typewriter-intro");
+    const introText = introElement.textContent;
+    introElement.textContent = ""; // Clear initial text for typing effect
+
+    typeText(nameElement, nameText, 100, () => {
+        setTimeout(() => {
+            typeText(introElement, introText, 50);
+        }, 500); // Delay before typing the intro
+    });
+}
+// Start typing effect when page loads
+window.onload = startTypewriterEffect;
+
+// JavaScript for Horizontal Scrolling of Skills Section
+function scrollLeft() {
+    document.querySelector('.skill-icons').scrollBy({
+        top: 0,
+        left: -100,
+        behavior: 'smooth'
+    });
+}
+
+function scrollRight() {
+    document.querySelector('.skill-icons').scrollBy({
+        top: 0,
+        left: 100,
+        behavior: 'smooth'
+    });
+}
+
+// Story Animation - Trigger on Scroll
+const storySection = document.querySelector('.story-section');
+const storyText = document.querySelector('.story-text');
+
+// Function to check if the story section is in the viewport
+function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.top >= 0 && rect.bottom <= window.innerHeight;
+}
+
+// Add scroll event listener to trigger animation
+window.addEventListener('scroll', function() {
+    if (isInViewport(storySection)) {
+        storyText.classList.add('story-visible');
+    }
+});
+
+
 let previousScrollY = 0;
 /// Popup Functionality
 function openPopup(popupId) {
