@@ -321,7 +321,7 @@
         // Listen to the scroll event and update the background position
         window.addEventListener('scroll', function() {
             const scrollPosition = window.scrollY;  // Get the vertical scroll position
-            const speed = -0.05;  // Use a negative value to reverse the background scroll direction
+            const speed = -0.01;  // Use a negative value to reverse the background scroll direction
 
             // Move the background in the opposite direction as the user scrolls
             document.body.style.backgroundPositionY = `${scrollPosition * speed}px`;
