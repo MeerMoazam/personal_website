@@ -13,14 +13,17 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark ">
             <a class="navbar-brand" href="#">My Portfolio</a>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- 3-Dot Menu for Mobile -->
+            <div class="menu-icon" onclick="toggleMenu()">
+                &#x22EE; <!-- Vertical 3-dot icon -->
+            </div>
+            <div class="collapse navbar-collapse navbar-links" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
                     <li class="nav-item"><a class="nav-link" href="#cv">CV</a></li>
                     <li class="nav-item"><a class="nav-link" href="#chatbot">Chatbot</a></li>
                     <li class="nav-item"><a class="nav-link" href="#showcase">Showcase</a></li>
                     <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#ideas">Ideas Board</a></li>
                 </ul>
             </div>
         </nav>
@@ -36,44 +39,50 @@
                     <p id="typewriter-intro">I’m a technologist specializing in AI, cybersecurity, and blockchain development. With years of experience in the field, I am committed to leveraging emerging technologies to solve real-world problems.</p>
                 </div>
                 
-                <!-- Skill Cards Section -->
                 <div id="skills" class="col-md-12 text-center skills-section">
-                    <h3 class="animate-fadeIn">Skills & Technologies</h3>
-                    <!-- Left Arrow -->
-                    <button class="arrow-button left-arrow" onclick="scrollLeft()">&#8249;</button>
+                    <h4 class="animate-fadeIn">Skills & Technologies</h4>
+                    
                     <!-- Skill Icons Wrapper -->
-                    <div class="skill-icons">
-                        <div class="skill-card">
-                            <i class="fab fa-python"></i>
-                            <img src="python-logo.png" alt="Python" class="skills-logo">
-                            <p>Python</p>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fab fa-java"></i>
-                            <img src="java-logo.png" alt="Java" class="skills-logo">
-                            <p>Java</p>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fas fa-cubes"></i>
-                            <img src="javascript-logo.png" alt="JavaScript" class="skills-logo">
-                            <p>JavaScript</p>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fas fa-cubes"></i>
-                            <img src="blockchain-logo.svg" alt="Blockchain" class="skills-logo">
-                            <p>Blockchain</p>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fas fa-shield-alt"></i>
-                            <p>Cybersecurity</p>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fab fa-react"></i>
-                            <p>React</p>
+                    <div class="skill-icons-wrapper">
+                        <div class="skill-icons">
+                            <div class="skill-card">
+                                <img src="python-logo.png" alt="Python" class="skills-logo">
+                                <p>Python</p>
+                            </div>
+                            <div class="skill-card">
+                                <img src="java-logo.png" alt="Java" class="skills-logo">
+                                <p>Java</p>
+                            </div>
+                            <div class="skill-card">
+                                <img src="javascript-logo.png" alt="JavaScript" class="skills-logo">
+                                <p>JavaScript</p>
+                            </div>
+                            <div class="skill-card">
+                                <img src="blockchain-logo.svg" alt="Blockchain" class="skills-logo">
+                                <p>Blockchain</p>
+                            </div>
+                            <div class="skill-card">
+                                <img src="react-logo.png" alt="Blockchain" class="skills-logo">
+                                <p>React</p>
+                            </div>
+                            <div class="skill-card">
+                                <img src="networking-logo.png" alt="Blockchain" class="skills-logo">
+                                <p>Networking</p>
+                            </div>
+                            <div class="skill-card">
+                                <img src="HTML-logo.png" alt="Blockchain" class="skills-logo">
+                                <p>HTML</p>
+                            </div>
+                            <div class="skill-card">
+                                <img src="CSS-logo.png" alt="Blockchain" class="skills-logo">
+                                <p>CSS</p>
+                            </div>
+                            <div class="skill-card">
+                                <img src="php-logo.png" alt="Blockchain" class="skills-logo">
+                                <p>PHP</p>
+                            </div>
                         </div>
                     </div>
-                    <!-- Right Arrow -->
-                    <button class="arrow-button right-arrow" onclick="scrollRight()">&#8250;</button>
                 </div>
 
                 <!-- Personal Story Section -->
@@ -203,6 +212,39 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Projects Section -->
+            <div class="cv-section-item">
+                <h3 class="cv-section-title">Projects</h3>
+                <hr class="section-line">
+                <div class="cv-projects-grid">
+                    <!-- First Project -->
+                    <div class="cv-project">
+                        <div class="cv-project-image">
+                            <img src="smart-home-automation.jpeg" alt="Project 1">
+                        </div>
+                        <div class="cv-project-content">
+                            <a href="#" class="clickable-title" onclick="openPopup('project1-popup')">Smart Home Automation System</a>
+                            <p>Spring 2023</p>
+                            <ul>
+                                <li>Developed a web-based home automation platform using Raspberry Pi and Arduino</li>
+                                <li>Implemented machine learning algorithms for predictive energy management</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Second Project -->
+                    <div class="cv-project">
+                        <div class="cv-project-image">
+                            <img src="blockchain-image1.webp" alt="Project 2">
+                        </div>
+                        <div class="cv-project-content">
+                            <a href="#" class="clickable-title" onclick="openPopup('project2-popup')">Blockchain Decentralized Finance</a>
+                            <p>Built a decentralized finance system using blockchain technology...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -290,15 +332,6 @@
         </div>
     </section>
 
-    <!-- Ideas Board Section (Hardcoded) -->
-    <section id="ideas" class="ideas-section">
-        <div class="container">
-            <h2>Ideas Board</h2>
-            <input type="text" id="idea-input" placeholder="Post your idea..." class="form-control mb-3">
-            <button class="btn btn-primary" type="button">Submit Idea</button>
-        </div>
-    </section>
-
     <footer class="text-center text-light p-3">
         <p>&copy; 2024 My Portfolio</p>
     </footer>
@@ -312,6 +345,16 @@
             // Move the background in the opposite direction as the user scrolls
             document.body.style.backgroundPositionY = `${scrollPosition * speed}px`;
         });
+
+        // Toggle function for 3-dot menu on mobile
+        function toggleMenu() {
+            const navbarLinks = document.getElementById('navbarNav');
+            if (navbarLinks) {
+                navbarLinks.classList.toggle('show'); // Add or remove 'show' class
+            } else {
+                console.error("Navbar links element not found.");
+            }
+        }
 
         // Function to check if an element is in the viewport
         function isElementInViewport(el) {
