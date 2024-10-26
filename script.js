@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <!-- Video Embed (centered) -->
                 <div style="text-align: center; margin: 30px 0;">
                     <video width="60%" controls>
-                        <source src="smart-home-demo.mp4" type="video/mp4">
+                        <source src="video-demo-link.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <!-- Video Embed (centered) -->
                 <div style="text-align: center; margin: 30px 0;">
                     <video width="60%" controls>
-                        <source src="smart-home-demo.mp4" type="video/mp4">
+                        <source src="video-demo-link.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -470,7 +470,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <!-- Video Embed (centered) -->
                 <div style="text-align: center; margin: 30px 0;">
                     <video width="60%" controls>
-                        <source src="smart-home-demo.mp4" type="video/mp4">
+                        <source src="video-demo-link.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -688,6 +688,32 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
+// Function to highlight the navbar link for the current section
+window.addEventListener('scroll', function () {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+    let currentSectionId = '';
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+
+        if (window.scrollY >= sectionTop - sectionHeight / 3) {
+            currentSectionId = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active'); // Remove the 'active' class from all links
+        if (link.getAttribute('href').includes(currentSectionId)) {
+            link.classList.add('active'); // Add the 'active' class to the current link
+        }
+    });
+});
+
+
 // Function to type text character by character
 function typeText(element, text, speed, callback) {
     let i = 0;
@@ -700,7 +726,6 @@ function typeText(element, text, speed, callback) {
         }
     }, speed);
 }
-
 // Function to initiate the typing sequence
 function startTypewriterEffect() {
     // Type the name first
@@ -722,22 +747,30 @@ function startTypewriterEffect() {
 // Start typing effect when page loads
 window.onload = startTypewriterEffect;
 
-// JavaScript for Horizontal Scrolling of Skills Section
-function scrollLeft() {
-    document.querySelector('.skill-icons').scrollBy({
-        top: 0,
-        left: -100,
-        behavior: 'smooth'
-    });
-}
 
-function scrollRight() {
-    document.querySelector('.skill-icons').scrollBy({
-        top: 0,
-        left: 100,
-        behavior: 'smooth'
-    });
-}
+// JavaScript for Horizontal Scrolling of Skills Section
+const skillIcons = document.querySelector('.skill-icons');
+
+// Mouse wheel scroll (desktop)
+skillIcons.addEventListener('wheel', (event) => {
+    event.preventDefault();
+    skillIcons.scrollLeft += event.deltaY;  // Horizontal scroll
+});
+
+// Touch scroll (mobile)
+let startX;
+
+skillIcons.addEventListener('touchstart', (event) => {
+    startX = event.touches[0].pageX;
+});
+
+skillIcons.addEventListener('touchmove', (event) => {
+    const touchX = event.touches[0].pageX;
+    const scrollAmount = startX - touchX;
+    skillIcons.scrollLeft += scrollAmount;
+    startX = touchX;
+});
+
 
 // Story Animation - Trigger on Scroll
 const storySection = document.querySelector('.story-section');
@@ -801,15 +834,32 @@ function openPopup(popupId) {
         content = `
             <h3>Smart Home Automation System</h3>
             <img src="smart-home-automation.jpeg" alt="Project Image" style="width:100%; margin-top:20px;">
-            <p>Details about the Smart Home Automation project.</p>
-            <p>Watch the demo video: <a href="video-demo-link.mp4" target="_blank">Demo Video</a></p>
+            <p>
+                <ul>
+                    <li>Developed a web-based home automation platform using Raspberry Pi and Arduino</li>
+                    <li>Implemented machine learning algorithms for predictive energy management</li>
+                </ul>
+            </p>
+            <!-- Video Embed (centered) -->
+            <div style="text-align: center; margin: 30px 0;">
+                <video width="100%" controls>
+                    <source src="video-demo-link.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         `;
     } else if (popupId === 'project2-popup') {
         content = `
             <h3>Blockchain Decentralized Finance</h3>
             <img src="blockchain-image1.webp" alt="Blockchain Image" style="width:100%; margin-top:20px;">
-            <p>Details about the Blockchain DeFi project.</p>
-            <p>Watch the demo video: <a href="video-demo-link.mp4" target="_blank">Demo Video</a></p>
+            <p>Built a decentralized finance system using blockchain technology...</p>
+            <!-- Video Embed (centered) -->
+            <div style="text-align: center; margin: 30px 0;">
+                <video width="100%" controls>
+                    <source src="video-demo-link.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         `;
     }
 
