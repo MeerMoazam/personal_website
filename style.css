@@ -25,7 +25,7 @@ section {
 
 /* Paragraph Text */
 p, .section-content {
-    color: #dddcdc;  /* Slightly softer white for body text */
+    color: #c9c7c7;  /* Slightly softer white for body text */
 }
 
 /* Adjust body padding to account for the fixed navbar */
@@ -34,8 +34,8 @@ body {
     padding-top: 70px;  /* Prevent content from hiding under navbar */
 }
 
-h2 {
-    color: #ffcc00;
+h2, h3, h4 {
+    color: lightgray;
     margin-bottom: 10px;
     font-size: 2.5rem;
 }
@@ -46,9 +46,22 @@ h2 {
     top: 0; /* Aligns it to the top of the viewport */
     width: 100%; /* Ensures the navbar spans the full width */
     z-index: 1000; /* Ensures the navbar stays on top of other content */
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.849); /* Semi-transparent background */
     padding: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a shadow for visual separation */
+}
+
+.navbar-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+/* 3-Dot Menu Icon (hidden by default on desktop) */
+.menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 /* Ensure body content doesn’t go under the navbar */
@@ -78,17 +91,22 @@ body {
     color: #ffcc00;
 }
 
+.navbar-nav .nav-link.active {
+    font-weight: bold; /* Optional: make it bold for emphasis */
+    border-bottom: 2px solid #b9bbbbe0; /* Optional: underline active link */
+}
+
 /* About Me Section */
 .about-section {
     margin: 0 auto; /* Center align */
     color: #ffffff;
     text-align: center;
+    overflow: hidden;
 }
 
 /* Introduction Text */
 .about-intro h2 {
     font-size: 2.5rem;
-    color: #ffcc00;
     margin-bottom: 10px;
 }
 
@@ -108,7 +126,6 @@ body {
 
 #typewriter-name {
     font-size: 2.5rem;
-    color: #ffcc00;
     margin-bottom: 20px;
 }
 
@@ -126,34 +143,49 @@ body {
 }
 
 
-/* Skill Cards Section */
+/* Skills Section */
 .skills-section {
-    padding: 50px 20px;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
 }
 
+.skill-icons-wrapper {
+    overflow: hidden;
+    margin: auto;
+    width: 90%;
+}
+
+/* Skills Section Scrollable */
 .skill-icons {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    max-width: 800px;
-    margin: auto;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;  /* Prevent hidden scrollbar from overlaying content */
 }
 
+.skill-icons::-webkit-scrollbar {
+    display: none;  /* Hide scrollbar on WebKit browsers */
+}
+
+/* Card Styles */
 .skill-card {
+    min-width: 130px;
     background: #1e1e1e;
     border-radius: 10px;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
     transition: transform 0.3s;
 }
 
-.skill-card:hover {
-    transform: scale(1.1);
+.skills-logo {
+    width: 50px;
+    height: auto;
 }
 
-.skill-card i {
-    font-size: 2rem;
-    color: #34a853;
+.skill-card:hover {
+    transform: scale(1.1);
 }
 
 .skill-card p {
@@ -163,7 +195,7 @@ body {
 
 /* Personal Story Section */
 .story-section {
-    padding: 30px 20px;
+    padding: 30px auto;
 }
 
 .story-text {
@@ -190,14 +222,14 @@ body {
     margin: 10px;
     padding: 15px 30px;
     color: #fff;
-    background-color: #ffcc00;
+    background-color: gray;
     text-decoration: none;
     border-radius: 5px;
     transition: background 0.3s ease;
 }
 
 .btn-cta:hover {
-    background-color: #967800;
+    background-color: #535353;
 }
 
 /* Animations */
@@ -231,6 +263,14 @@ body {
     margin-bottom: 0px;
 }
 
+.cv-header a {
+    background-color: lightslategrey;
+}
+
+.cv-header a:hover {
+    background-color: rgb(64, 66, 69);
+}
+
 .left-align {
     text-align: left;
 }
@@ -242,7 +282,7 @@ body {
 .section-line {
     border: none;
     height: 2px;
-    background-color: #ffcc00;
+    background-color: lightgrey;
     margin: 10px 0;
 }
 
@@ -262,7 +302,7 @@ body {
 }
 
 .clickable-title:hover {
-    color: #ffcc00;
+    color: lightgray;
 }
 
 /* Project Images */
@@ -407,8 +447,7 @@ body {
 
 /* Chatbox Styling */
 .chatbox {
-    width: 100%;  /* Set the chatbox width to 75% */
-    /* max-width: 900px; */
+    width: 100%;  
     margin: 0 auto;
     background-color: #2c2c2e;
     border-radius: 10px;
@@ -453,7 +492,7 @@ body {
 
 .chatbox-input button {
     flex-grow: 1;
-    background-color: #00bcd4;
+    background-color: #007585;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -466,7 +505,7 @@ body {
 }
 
 .chatbox-input button:hover {
-    background-color: #0097a7;
+    background-color: #61878b;
 }
 
 /* Fade-in animation for chatbot */
@@ -538,7 +577,7 @@ body {
 .showcase-entry .btn {
     text-align: center;
     display: inline-block;
-    background-color: #17a2b8;
+    background-color: #325f67;
     padding: 10px 15px;
     color: white;
     border-radius: 5px;
@@ -587,15 +626,9 @@ body {
 
 /* Modal Header Styling */
 .modal-content h2 {
-    color: #ffcc00;  /* Change header color */
     margin-bottom: 15px;  /* Add space between header and paragraph */
     text-align: center;  /* Center the header text */
     font-size: 1.8em;  /* Increase the header font size for professionalism */
-}
-
-/* Modal Sub-header Styling */
-.modal-content h3,h4 {
-    color: #ffcc00;
 }
 
 /* Modal Paragraph Styling */
@@ -825,27 +858,6 @@ footer {
     .skill-card:hover {
         transform: scale(1.1);
     }
-
-    /* Arrow buttons for scrolling */
-    .arrow-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: #ffcc00;
-        font-size: 2rem;
-        cursor: pointer;
-        padding: 5px 10px;
-        border: none;
-    }
-
-    .left-arrow {
-        left: 5px;
-    }
-
-    .right-arrow {
-        right: 5px;
-    }
 }
 
 /* General Reset */
@@ -856,12 +868,24 @@ footer {
 /* Mobile View Adjustments */
 @media (max-width: 768px) {
     /* Navbar - Fixed for visibility */
-    .navbar {
-        position: fixed;
-        width: 100%;
-        top: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        z-index: 1000;
+    .navbar-links {
+        display: none; /* Hide links initially on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;  /* Adjust based on navbar height */
+        right: 20px;
+        background: #1a1a1a;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar-links.show {
+        display: flex; /* Show links when menu is open */
+    }
+    
+    .menu-icon {
+        display: block; /* Show 3-dot menu on mobile */
     }
 
     /* About Section */
@@ -910,27 +934,6 @@ footer {
         transform: scale(1.1);
     }
 
-    /* Arrows for scrolling */
-    .arrow-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: #ffcc00;
-        font-size: 2rem;
-        cursor: pointer;
-        padding: 5px 10px;
-        z-index: 100;
-    }
-
-    .left-arrow {
-        left: 0;
-    }
-
-    .right-arrow {
-        right: 0;
-    }
-
     /* CV Button Size Reduction on Mobile */
     .btn-cta {
         font-size: 0.8rem;
@@ -970,6 +973,10 @@ footer {
     }
     .about-intro {
         font-size: 0.9rem;
+    }
+
+    .skill-card {
+        min-width: 80px;   /* Further reduce for smaller screens */
     }
 
     /* CTA Button Adjustments */
