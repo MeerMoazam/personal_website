@@ -1013,6 +1013,25 @@ footer {
         display: block; /* Show 3-dot menu on mobile */
     }
 
+    .home-section {
+        padding-top: 1rem;
+        background-position: center;
+        height: auto;
+    }
+
+    .flag-img {
+        height: 200px;
+    }
+
+    .frame {
+        max-width: 200px;
+        padding: 15px;
+    }
+
+    .headshot {
+        width: 120px;
+    }
+
     /* About Section */
     .about-section {
         padding: 60px 15px;
@@ -1110,4 +1129,18 @@ footer {
         padding: 8px 12px;
     }
 
+}
+
+@media (max-width: 480px) {
+    .frame {
+        max-width: 150px;
+    }
+
+    .flag-img {
+        height: 150px;
+    }
+
+    .headshot {
+        width: 100px;
+    }
 }
