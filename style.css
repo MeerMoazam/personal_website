@@ -96,6 +96,131 @@ body {
     border-bottom: 2px solid #b9bbbbe0; /* Optional: underline active link */
 }
 
+/* Add spacing above the Home section */
+#home {
+    padding-top: 2rem;
+}
+
+/* Home Section Styling */
+.home-section {
+    background-image: url('city-bg1.png'); /* Add your background image path */
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* UAE Flag Styling */
+.uae-flag {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    opacity: 0%;
+    animation: slideInFlag 1.5s forwards ease-in-out 2s;
+}
+
+.flag-img {
+    border-radius: 10px; 
+    height: 380px;
+}
+
+/* Frame and Headshot Styling */
+.frame {
+    position: relative;
+    padding: 20px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 215, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Gold gradient */
+    border: 6px solid transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.6);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: createFrame 1s forwards ease-in-out;
+}
+
+/* Inner Glow Effect */
+.frame::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, rgba(255, 221, 0, 0.3), rgba(255, 204, 0, 0.5), rgba(255, 221, 0, 0.3));
+    filter: blur(8px);
+    z-index: -1; /* Place behind the frame */
+}
+
+.headshot {
+    width: 150px;
+    height: auto;
+    border-radius: 10%;
+    opacity: 0;
+    animation: fadeInHeadshot 1s forwards ease-in-out 1.5s;
+}
+
+.frame-overlay {
+    position: absolute;
+    top: -15%;
+    left: -15%;
+    width: 130%;
+    height: 130%;
+    background: linear-gradient(45deg, rgba(126, 90, 5, 0.826), rgba(202, 193, 142, 0), rgba(255, 255, 255, 0.1));
+    border-radius: 10px;
+    pointer-events: none;
+    box-shadow: 0 0 30px rgba(255, 204, 0, 0.5), 0 0 60px rgba(255, 204, 0, 0.3);
+}
+
+@keyframes slideInFlag {
+    0% {
+        left: -100px;
+        opacity: 0;
+    }
+    100% {
+        left: 20px;
+        opacity: 0.15;  /* Set final opacity to 15% */
+    }
+}
+
+/* Keyframes for Animations */
+@keyframes createFrame {
+    0% {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInHeadshot {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Parallax Effect */
+@media (hover: none) {
+    .home-section {
+        background-attachment: scroll; /* Remove fixed background on touch devices */
+    }
+}
+
 /* About Me Section */
 .about-section {
     margin: 0 auto; /* Center align */
