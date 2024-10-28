@@ -689,6 +689,14 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+// Parallax effect on Home Section Background
+window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY;
+    const parallaxSpeed = 0.3;
+    document.querySelector('.home-section').style.backgroundPositionY = `${scrollPosition * parallaxSpeed}px`;
+});
+
+
 // Function to highlight the navbar link for the current section
 window.addEventListener('scroll', function () {
     const sections = document.querySelectorAll('section');
