@@ -689,11 +689,13 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// Parallax effect on Home Section Background
+// Parallax Effect on Scroll
 window.addEventListener('scroll', function() {
     const scrollPosition = window.scrollY;
-    const parallaxSpeed = 0.3;
-    document.querySelector('.home-section').style.backgroundPositionY = `${scrollPosition * parallaxSpeed}px`;
+
+    // Move backgrounds at different speeds
+    document.querySelector('.desert').style.transform = `translateY(${scrollPosition * 0.2}px)`;
+    document.querySelector('.city').style.transform = `translateY(${scrollPosition * 0.1}px)`;
 });
 
 
