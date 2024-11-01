@@ -19,7 +19,7 @@
             </div>
             <div class="collapse navbar-collapse navbar-links" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
                     <li class="nav-item"><a class="nav-link" href="#cv">CV</a></li>
                     <li class="nav-item"><a class="nav-link" href="#chatbot">Chatbot</a></li>
@@ -30,14 +30,23 @@
         </nav>
     </header>
 
-    <!-- Home Section -->
+    <!-- Home Section with Layered Backgrounds -->
     <section id="home" class="home-section">
-        <div class="uae-flag">
-            <img src="uae-flag.gif" alt="UAE Flag" class="flag-img">
-        </div>
-        <div class="frame">
-            <img src="my-headshot.jpg" alt="Headshot" class="headshot">
-            <div class="frame-overlay"></div>
+        <!-- Desert Layer -->
+        <div class="background-layer desert"></div>
+        <!-- City Layer -->
+        <div class="background-layer city"></div>
+
+        <!-- Content Layer -->
+        <div class="content-layer">
+            <!-- UAE Flag -->
+            <img src="uae-flag.gif" alt="UAE Flag" class="uae-flag flag-img">
+
+            <!-- Dubai Frame with Headshot -->
+            <div class="frame-container">
+                <img src="dubai-frame.png" alt="Dubai Frame" class="dubai-frame">
+                <img src="my-headshot.jpg" alt="Profile Headshot" class="headshot">
+            </div>
         </div>
     </section>
 
