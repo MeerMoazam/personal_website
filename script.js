@@ -688,17 +688,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-// Parallax Effect on Scroll
-window.addEventListener('scroll', function() {
-    const scrollPosition = window.scrollY;
-
-    // Move backgrounds at different speeds
-    document.querySelector('.desert').style.transform = `translateY(${scrollPosition * 0.2}px)`;
-    document.querySelector('.city').style.transform = `translateY(${scrollPosition * 0.1}px)`;
-});
-
-
 // Function to highlight the navbar link for the current section
 window.addEventListener('scroll', function () {
     const sections = document.querySelectorAll('section');
@@ -925,7 +914,9 @@ function sendMessage() {
                 chatLog.innerHTML += `<p class="chatbot-response"><strong>Chatbot:</strong> ${data.answer}</p>`;
                 chatLog.scrollTop = chatLog.scrollHeight; // Scroll to the bottom
             } else {
-                chatLog.innerHTML += `<p class="chatbot-response"><strong>Chatbot:</strong> I don't know the answer. Please leave feedback here.</p>`;
+                // If no answer is found, prompt for feedback
+                chatLog.innerHTML += `<p class="chatbot-response"><strong>Chatbot:</strong> I don't know the answer. Please leave feedback below.</p>`;
+                showFeedbackForm(); // Show feedback form
                 chatLog.scrollTop = chatLog.scrollHeight; // Scroll to the bottom
             }
         })
@@ -939,7 +930,33 @@ function sendMessage() {
     }
 }
 
-// Handle Enter Key Press
+// Function to show feedback form in place of chatbot input
+function showFeedbackForm() {
+    document.getElementById('chatbox-input').style.display = 'none'; // Hide chat input
+    document.getElementById('feedback-form').style.display = 'block'; // Show feedback form
+}
+
+// Function to handle feedback submission
+function submitFeedback() {
+    const name = document.getElementById('feedback-name').value;
+    const email = document.getElementById('feedback-email').value;
+    const subject = document.getElementById('feedback-subject').value;
+    const message = document.getElementById('feedback-message').value;
+
+    alert('Feedback submitted! Thank you.');
+
+    // Clear form inputs
+    document.getElementById('feedback-name').value = '';
+    document.getElementById('feedback-email').value = '';
+    document.getElementById('feedback-subject').value = '';
+    document.getElementById('feedback-message').value = '';
+
+    // Hide feedback form and show chat input again
+    document.getElementById('feedback-form').style.display = 'none';
+    document.getElementById('chatbox-input').style.display = 'flex';
+}
+
+// Handle Enter Key Press for Chat
 document.getElementById("user-input").addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
         event.preventDefault();  // Prevent the form from being submitted
