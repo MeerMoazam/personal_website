@@ -19,7 +19,7 @@
             </div>
             <div class="collapse navbar-collapse navbar-links" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
                     <li class="nav-item"><a class="nav-link" href="#cv">CV</a></li>
                     <li class="nav-item"><a class="nav-link" href="#chatbot">Chatbot</a></li>
@@ -30,22 +30,25 @@
         </nav>
     </header>
 
-    <!-- Home Section with Layered Backgrounds -->
-    <section id="home" class="home-section">
-        <!-- Desert Layer -->
-        <div class="background-layer desert"></div>
-        <!-- City Layer -->
-        <div class="background-layer city"></div>
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+        <img src="city-bg.jpg" alt="City Background" class="hero-bg" data-aos="fade-in">
 
-        <!-- Content Layer -->
-        <div class="content-layer">
-            <!-- UAE Flag -->
-            <img src="uae-flag.gif" alt="UAE Flag" class="uae-flag flag-img">
+        <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="row align-items-center">
+                <!-- Text Content -->
+                <div class="col-md-6 text-content">
+                    <h2>John Doe</h2>
+                    <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer">Photographer</span>
+                        <span class="typed-cursor typed-cursor--blink"></span>
+                    </p>
+                    <a href="#about" class="btn-scroll" title="Scroll Down"><i class="bi bi-chevron-down"></i></a>
+                </div>
 
-            <!-- Dubai Frame with Headshot -->
-            <div class="frame-container">
-                <img src="dubai-frame.png" alt="Dubai Frame" class="dubai-frame">
-                <img src="my-headshot.jpg" alt="Profile Headshot" class="headshot">
+                <!-- Headshot Image -->
+                <div class="col-md-6 d-flex justify-content-center">
+                    <img src="my-headshot.png" alt="Your Headshot" class="headshot">
+                </div>
             </div>
         </div>
     </section>
