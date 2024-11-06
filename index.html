@@ -6,6 +6,20 @@
     <title>My Interactive Portfolio</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Quicksand:wght@300;400;500;600;700&family=Domine:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
 
@@ -38,7 +52,7 @@
             <div class="row align-items-center">
                 <!-- Text Content -->
                 <div class="col-md-6 text-content">
-                    <h2>John Doe</h2>
+                    <h2>Laura Thomson</h2>
                     <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer">Photographer</span>
                         <span class="typed-cursor typed-cursor--blink"></span>
                     </p>
@@ -52,6 +66,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- About Me Section (Updated Professional Layout) -->
     <section id="about" class="about-section">
@@ -145,12 +160,12 @@
                     <div class="left-align">
                         <a href="#" class="clickable-title" onclick="openPopup('education-popup')">University of California, Berkeley</a>
                         <p>Dual Degree Recipient</br>
-                        Bachelor of Science in Data Science</br>
-                        Bachelor of Science in Physics
-                        <ul>
-                            <li>Overall GPA: 3.90/4.00</li>
-                            <li>Relevant Coursework: Algebra, Geometry, Statistics, Robots, Penetration tools</li>
-                        </ul>
+                            Bachelor of Science in Data Science</br>
+                            Bachelor of Science in Physics
+                            <ul>
+                                <li>Overall GPA: 3.90/4.00</li>
+                                <li>Relevant Coursework: Algebra, Geometry, Statistics, Robots, Penetration tools</li>
+                            </ul>
                         </p>
                     </div>
                     <div class="right-align">
@@ -253,7 +268,7 @@
     </div>
 
 
-    <!-- Chatbot Section -->
+    <!-- Chatbot and Feedback Section -->
     <section id="chatbot" class="chatbot-section">
         <div class="container">
             <h2 class="text-center">NLP Chatbot</h2>
@@ -267,9 +282,19 @@
                 </div>
 
                 <!-- User Input and Send Button -->
-                <div class="chatbox-input">
+                <div id="chatbox-input" class="chatbox-input">
                     <input type="text" id="user-input" class="form-control" placeholder="Ask me anything about me!">
                     <button id="send-btn" onclick="sendMessage()" class="btn btn-info mt-3">Send</button>
+                </div>
+
+                <!-- Feedback Form (Initially Hidden) -->
+                <div id="feedback-form" class="feedback-form" style="display: none;">
+                    <h3>Feedback</h3>
+                    <input type="text" id="feedback-name" placeholder="Your Name" class="form-control mb-2">
+                    <input type="email" id="feedback-email" placeholder="Your Email" class="form-control mb-2">
+                    <input type="text" id="feedback-subject" placeholder="Subject" class="form-control mb-2">
+                    <textarea id="feedback-message" placeholder="Message" class="form-control mb-2"></textarea>
+                    <button onclick="submitFeedback()" class="btn btn-primary mt-3">Submit Feedback</button>
                 </div>
             </div>
         </div>
@@ -319,16 +344,6 @@
             </div>
         </div>
     </div>
-
-
-    <!-- Feedback Section (Hardcoded) -->
-    <section id="feedback" class="feedback-section">
-        <div class="container">
-            <h2>Feedback</h2>
-            <textarea id="feedback-input" placeholder="Leave your feedback..."></textarea>
-            <button class="btn btn-primary mt-3">Submit Feedback</button>
-        </div>
-    </section>
 
     <footer class="text-center text-light p-3">
         <p>&copy; 2024 My Portfolio</p>
