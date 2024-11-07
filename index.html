@@ -50,18 +50,18 @@
 
         <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
             <div class="row align-items-center">
+                <!-- Headshot Image -->
+                <div class="col-md-3 d-flex justify-content-center">
+                    <img src="headshot.png" alt="Your Headshot" class="headshot">
+                </div>
+
                 <!-- Text Content -->
-                <div class="col-md-6 text-content">
+                <div class="col-md-9 text-content">
                     <h2>John Doe</h2>
                     <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer">Photographer</span>
                         <span class="typed-cursor typed-cursor--blink"></span>
                     </p>
                     <a href="#about" class="btn-scroll" title="Scroll Down"><i class="bi bi-chevron-down"></i></a>
-                </div>
-
-                <!-- Headshot Image -->
-                <div class="col-md-6 d-flex justify-content-center">
-                    <img src="my-headshot.png" alt="Your Headshot" class="headshot">
                 </div>
             </div>
         </div>
@@ -268,7 +268,7 @@
     </div>
 
 
-    <!-- Chatbot and Feedback Section -->
+    <!-- Chatbot Section -->
     <section id="chatbot" class="chatbot-section">
         <div class="container">
             <h2 class="text-center">NLP Chatbot</h2>
@@ -282,23 +282,29 @@
                 </div>
 
                 <!-- User Input and Send Button -->
-                <div id="chatbox-input" class="chatbox-input">
+                <div class="chatbox-input">
                     <input type="text" id="user-input" class="form-control" placeholder="Ask me anything about me!">
                     <button id="send-btn" onclick="sendMessage()" class="btn btn-info mt-3">Send</button>
-                </div>
-
-                <!-- Feedback Form (Initially Hidden) -->
-                <div id="feedback-form" class="feedback-form" style="display: none;">
-                    <h3>Feedback</h3>
-                    <input type="text" id="feedback-name" placeholder="Your Name" class="form-control mb-2">
-                    <input type="email" id="feedback-email" placeholder="Your Email" class="form-control mb-2">
-                    <input type="text" id="feedback-subject" placeholder="Subject" class="form-control mb-2">
-                    <textarea id="feedback-message" placeholder="Message" class="form-control mb-2"></textarea>
-                    <button onclick="submitFeedback()" class="btn btn-primary mt-3">Submit Feedback</button>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Feedback Popup Modal -->
+    <div id="feedback-modal" class="feedback-modal">
+        <div class="feedback-content">
+            <h3>Feedback</h3>
+            <p>I don't know the answer. Please leave feedback below.</p>
+            <form id="feedback-form">
+                <input type="text" id="feedback-name" placeholder="Your Name" required>
+                <input type="email" id="feedback-email" placeholder="Your Email" required>
+                <input type="text" id="feedback-subject" placeholder="Subject" required>
+                <textarea id="feedback-message" placeholder="Your Message" required></textarea>
+                <button type="button" onclick="submitFeedback()" class="btn btn-primary mt-3">Submit Feedback</button>
+            </form>
+            <span class="close-btn" onclick="closeFeedbackModal()">&times;</span>
+        </div>
+    </div>
 
     <!-- Showcase Section -->
     <section id="showcase" class="showcase-section">
