@@ -688,6 +688,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Toggle category function
+function toggleCategory(categoryId) {
+    const category = document.getElementById(categoryId);
+    category.style.display = category.style.display === 'none' ? 'block' : 'none';
+}
+
 // Function to highlight the navbar link for the current section
 window.addEventListener('scroll', function () {
     const sections = document.querySelectorAll('section');
