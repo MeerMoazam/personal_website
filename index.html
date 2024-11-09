@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>My Interactive Portfolio</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
@@ -13,13 +16,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Quicksand:wght@300;400;500;600;700&family=Domine:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="contact.css">
 </head>
 <body>
 
@@ -36,9 +37,8 @@
                     <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
                     <li class="nav-item"><a class="nav-link" href="#cv">CV</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#chatbot">Chatbot</a></li>
                     <li class="nav-item"><a class="nav-link" href="#showcase">Showcase</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -268,73 +268,325 @@
     </div>
 
 
-    <!-- Chatbot Section -->
-    <section id="chatbot" class="chatbot-section">
-        <div class="container">
-            <h2 class="text-center">NLP Chatbot</h2>
-            <p class="text-center">Ask me about my background, skills, and projects!</p>
-
-            <!-- Chat Window -->
-            <div id="chat-window" class="chatbox">
-                <div id="chat-log" class="chatbox-window">
-                    <!-- Friendly Welcome Message -->
-                    <p class="welcome-message"><strong>Chatbot:</strong> Hi! I’m your personal portfolio assistant. Ask me about my projects or experience!</p>
-                </div>
-
-                <!-- User Input and Send Button -->
-                <div class="chatbox-input">
-                    <input type="text" id="user-input" class="form-control" placeholder="Ask me anything about me!">
-                    <button id="send-btn" onclick="sendMessage()" class="btn btn-info mt-3">Send</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Feedback Popup Modal -->
-    <div id="feedback-modal" class="feedback-modal">
-        <div class="feedback-content">
-            <h3>Feedback</h3>
-            <p>I don't know the answer. Please leave feedback below.</p>
-            <form id="feedback-form">
-                <input type="text" id="feedback-name" placeholder="Your Name" required>
-                <input type="email" id="feedback-email" placeholder="Your Email" required>
-                <input type="text" id="feedback-subject" placeholder="Subject" required>
-                <textarea id="feedback-message" placeholder="Your Message" required></textarea>
-                <button type="button" onclick="submitFeedback()" class="btn btn-primary mt-3">Submit Feedback</button>
-            </form>
-            <span class="close-btn" onclick="closeFeedbackModal()">&times;</span>
-        </div>
-    </div>
-
     <!-- Showcase Section -->
     <section id="showcase" class="showcase-section">
         <div class="container">
             <h2 class="text-center">Showcase of Innovations & Technologies</h2>
 
-            <!-- Showcase Entries -->
-            <div class="showcase-entries">
-                <!-- AI Project -->
-                <div class="showcase-entry">
-                    <img src="smart-home-automation.jpeg" alt="AI Project">
-                    <h3>AI Project: Smart Home Automation</h3>
-                    <p>This project focuses on creating a smart home system using AI and IoT technologies.</p>
-                    <button class="btn btn-primary read-more-btn" data-article="ai-article">Read More</button>
+            <!-- AI Category -->
+            <a href="#" class="category-link" onclick="toggleCategory('ai-category'); return false;">
+                <h2 class="qa-question">
+                    AI (Artificial Intelligence)
+                </h2>
+            </a>
+            <div id="ai-category" class="showcase-category" style="display: none;">
+                <p>Explore projects in AI, focusing on machine learning, predictive analysis, and automation.</p>
+                <div class="row">
+                    <!-- AI Projects (Row with three articles) -->
+                    <div class="col-md-4">
+                        <div class="showcase-entry">
+                            <img src="smart-home-automation.jpeg" alt="AI Project">
+                            <h3>AI Project: Smart Home Automation</h3>
+                            <p>This project focuses on creating a smart home system using AI and IoT technologies.</p>
+                            <button class="btn btn-primary read-more-btn" data-article="ai-article">Read More</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="showcase-entry">
+                            <img src="blockchain-image1.webp" alt="Blockchain Project">
+                            <h3>Blockchain: Decentralized Finance (DeFi)</h3>
+                            <p>This project explores decentralized finance systems built using blockchain technology.</p>
+                            <button class="btn btn-primary read-more-btn" data-article="blockchain-article">Read More</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="showcase-entry">
+                            <img src="arvr-image1.jpg" alt="AR/VR Project">
+                            <h3>AR/VR in Education</h3>
+                            <p>Utilizing AR and VR technologies, this project enhances the learning experience.</p>
+                            <button class="btn btn-primary read-more-btn" data-article="arvr-article">Read More</button>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Blockchain Project -->
-                <div class="showcase-entry">
-                    <img src="blockchain-image1.webp" alt="Blockchain Project">
-                    <h3>Blockchain: Decentralized Finance (DeFi)</h3>
-                    <p>This project explores decentralized finance systems built using blockchain technology.</p>
-                    <button class="btn btn-primary read-more-btn" data-article="blockchain-article">Read More</button>
+                <!-- AI Q&A Section -->
+                <div class="qa-section">
+                    <!-- Q&A Section -->
+                    <h3 style="text-align: center; margin-top: 50px;">Questions and Answers</h3>
+
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <!-- Left Column -->
+                        <div style="width: 45%;">
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    What is a smart home system?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>A smart home system automates household activities using IoT devices and AI technologies to optimize comfort, energy usage, and security.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    How does AI learn user behavior?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>AI systems analyze user data over time, identifying patterns and preferences to predict future behavior and optimize settings.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    Can smart homes save energy?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>Yes, AI systems can reduce energy consumption by adjusting settings based on user behavior, ensuring optimal energy use at all times.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    What devices are used in smart homes?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>Smart homes use IoT devices like sensors, cameras, thermostats, and smart lighting systems to automate various tasks.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    Is it possible to integrate AI with voice assistants?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>Yes, AI can be integrated with voice assistants like Alexa or Google Home to enable hands-free control over smart home devices.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    Can AI improve home security?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>Yes, AI improves home security by offering real-time monitoring, anomaly detection, and facial recognition capabilities.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column -->
+                        <div style="width: 45%;">
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    How do smart homes reduce energy costs?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>Smart homes reduce energy costs by optimizing appliance usage during off-peak hours and minimizing unnecessary energy use.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    What is the role of IoT in smart homes?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>The Internet of Things (IoT) connects devices and sensors within the home to a central network, allowing for seamless automation and control.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    What challenges exist with AI in smart homes?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>Challenges include data privacy concerns, the complexity of setting up smart systems, and the need for continuous updates to AI algorithms.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    Can AI systems in smart homes be hacked?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>While no system is entirely hack-proof, using strong encryption and regular security updates can help protect AI systems in smart homes from cyber threats.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    What are some popular AI-powered smart home platforms?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>Popular AI-powered smart home platforms include Google Nest, Amazon Echo, Apple HomeKit, and Samsung SmartThings.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    What is the future of AI in smart homes?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>The future of AI in smart homes will involve greater automation, more sophisticated learning capabilities, and deeper integration with IoT devices and voice assistants.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Robotics Category -->
+            <a href="#" class="category-link" onclick="toggleCategory('robotics-category'); return false;">
+                <h2 class="qa-question">
+                    Robotics
+                </h2>
+            </a>
+            <div id="robotics-category" class="showcase-category" style="display: none;">
+                <p>Advancements in robotics for applications in industry, healthcare, and more.</p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="showcase-entry">
+                            <img src="robotics.jpg" alt="Robotics Project">
+                            <h4>Industrial Robotics</h4>
+                            <p>Automation in industries to enhance efficiency and safety.</p>
+                            <button class="btn btn-primary read-more-btn" data-article="robotics-article">Read More</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="showcase-entry">
+                            <img src="robotics2.jpg" alt="Robotics Project 2">
+                            <h4>Robotics Project 2</h4>
+                            <p>Description of robotics project 2.</p>
+                            <button class="btn btn-primary read-more-btn" data-article="robotics-article2">Read More</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="showcase-entry">
+                            <img src="robotics3.jpg" alt="Robotics Project 3">
+                            <h4>Robotics Project 3</h4>
+                            <p>Description of robotics project 3.</p>
+                            <button class="btn btn-primary read-more-btn" data-article="robotics-article3">Read More</button>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- AR/VR Project -->
-                <div class="showcase-entry">
-                    <img src="arvr-image1.jpg" alt="AR/VR Project">
-                    <h3>AR/VR in Education</h3>
-                    <p>Utilizing AR and VR technologies, this project enhances the learning experience.</p>
-                    <button class="btn btn-primary read-more-btn" data-article="arvr-article">Read More</button>
+                <!-- AI Q&A Section -->
+                <div class="qa-section">
+                    <!-- Q&A Section -->
+                    <h3 style="text-align: center; margin-top: 50px;">Questions and Answers</h3>
+
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <!-- Left Column -->
+                        <div style="width: 45%;">
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    What is a smart home system?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>A smart home system automates household activities using IoT devices and AI technologies to optimize comfort, energy usage, and security.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    How does AI learn user behavior?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>AI systems analyze user data over time, identifying patterns and preferences to predict future behavior and optimize settings.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    Can smart homes save energy?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>Yes, AI systems can reduce energy consumption by adjusting settings based on user behavior, ensuring optimal energy use at all times.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    What devices are used in smart homes?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>Smart homes use IoT devices like sensors, cameras, thermostats, and smart lighting systems to automate various tasks.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    Is it possible to integrate AI with voice assistants?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>Yes, AI can be integrated with voice assistants like Alexa or Google Home to enable hands-free control over smart home devices.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    Can AI improve home security?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>Yes, AI improves home security by offering real-time monitoring, anomaly detection, and facial recognition capabilities.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column -->
+                        <div style="width: 45%;">
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    How do smart homes reduce energy costs?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>Smart homes reduce energy costs by optimizing appliance usage during off-peak hours and minimizing unnecessary energy use.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    What is the role of IoT in smart homes?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>The Internet of Things (IoT) connects devices and sensors within the home to a central network, allowing for seamless automation and control.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    What challenges exist with AI in smart homes?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>Challenges include data privacy concerns, the complexity of setting up smart systems, and the need for continuous updates to AI algorithms.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    Can AI systems in smart homes be hacked?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>While no system is entirely hack-proof, using strong encryption and regular security updates can help protect AI systems in smart homes from cyber threats.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    What are some popular AI-powered smart home platforms?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>Popular AI-powered smart home platforms include Google Nest, Amazon Echo, Apple HomeKit, and Samsung SmartThings.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-box">
+                                <h5 class="qa-question">
+                                    What is the future of AI in smart homes?
+                                </h5>
+                                <div class="qa-content">
+                                    <p>The future of AI in smart homes will involve greater automation, more sophisticated learning capabilities, and deeper integration with IoT devices and voice assistants.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -350,6 +602,113 @@
             </div>
         </div>
     </div>
+
+    <section id="contact">
+        <main class="main">
+
+            <!-- Page Title -->
+            <div class="page-title" data-aos="fade">
+              <div class="heading">
+                <div class="container">
+                  <div class="row d-flex justify-content-center text-center">
+                    <div class="col-lg-8">
+                      <h1>Contact</h1>
+                      <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+                    </div>
+                  </div>
+                </div>
+        
+            <!-- Contact Section -->
+            <section class="contact section">
+        
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+        
+                <div class="row gy-4">
+        
+                  <div class="col-md-6">
+                    <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">
+                      <i class="icon bi bi-geo-alt flex-shrink-0"></i>
+                      <div>
+                        <h3>Address</h3>
+                        <p>A108 Adam Street, New York, NY 535022</p>
+                      </div>
+                    </div>
+                  </div><!-- End Info Item -->
+        
+                  <div class="col-md-6">
+                    <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="300">
+                      <i class="icon bi bi-telephone flex-shrink-0"></i>
+                      <div>
+                        <h3>Call Me</h3>
+                        <p>+1 5589 55488 55</p>
+                      </div>
+                    </div>
+                  </div><!-- End Info Item -->
+        
+                  <div class="col-md-6">
+                    <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="400">
+                      <i class="icon bi bi-envelope flex-shrink-0"></i>
+                      <div>
+                        <h3>Email Us</h3>
+                        <p>info@example.com</p>
+                      </div>
+                    </div>
+                  </div><!-- End Info Item -->
+        
+                  <div class="col-md-6">
+                    <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="500">
+                      <i class="icon bi bi-share flex-shrink-0"></i>
+                      <div>
+                        <h3>Social Profiles</h3>
+                        <div class="social-links">
+                          <a href="#"><i class="bi bi-twitter-x"></i></a>
+                          <a href="#"><i class="bi bi-facebook"></i></a>
+                          <a href="#"><i class="bi bi-instagram"></i></a>
+                          <a href="#"><i class="bi bi-skype"></i></a>
+                          <a href="#"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- End Info Item -->
+        
+                </div>
+        
+                <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="600">
+                  <div class="row gy-4">
+        
+                    <div class="col-md-6">
+                      <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                    </div>
+        
+                    <div class="col-md-6 ">
+                      <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                    </div>
+        
+                    <div class="col-md-12">
+                      <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                    </div>
+        
+                    <div class="col-md-12">
+                      <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                    </div>
+        
+                    <div class="col-md-12 text-center">
+                      <div class="loading">Loading</div>
+                      <div class="error-message"></div>
+                      <div class="sent-message">Your message has been sent. Thank you!</div>
+        
+                      <button type="submit">Send Message</button>
+                    </div>
+        
+                  </div>
+                </form><!-- End Contact Form -->
+        
+              </div>
+        
+            </section><!-- /Contact Section -->
+        
+        </main>
+    </section>    
 
     <footer class="text-center text-light p-3">
         <p>&copy; 2024 My Portfolio</p>
@@ -414,7 +773,21 @@
         });
 
     </script>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/typed.js/typed.umd.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
     <script src="script.js"></script>
+    <script src="contact.js"></script>
 
 </body>
 </html>
