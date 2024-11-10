@@ -46,7 +46,7 @@ h2, h3, h4 {
     top: 0; /* Aligns it to the top of the viewport */
     width: 100%; /* Ensures the navbar spans the full width */
     z-index: 1000; /* Ensures the navbar stays on top of other content */
-    background-color: rgba(0, 0, 0, 0.849); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0); /* Semi-transparent background */
     padding: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a shadow for visual separation */
 }
@@ -707,6 +707,9 @@ body {
 
 /* Spacing between sections */
 .showcase-section {
+    padding: 0px 0px;
+    margin-top: -120px;
+    margin-bottom: auto;
     animation: fadeInUp 1s ease-out;  /* Add animation on scroll */
 }
 
