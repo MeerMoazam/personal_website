@@ -709,7 +709,7 @@ body {
 .showcase-section {
     padding: 0px 0px;
     margin-top: -120px;
-    margin-bottom: auto;
+    margin-bottom: -230;
     animation: fadeInUp 1s ease-out;  /* Add animation on scroll */
 }
 
