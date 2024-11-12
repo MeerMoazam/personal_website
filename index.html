@@ -37,12 +37,33 @@
                     <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
                     <li class="nav-item"><a class="nav-link" href="#cv">CV</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#chatbot">Chatbot</a></li>
                     <li class="nav-item"><a class="nav-link" href="#showcase">Showcase</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </nav>
     </header>
+
+   <!-- Home Section 
+    <section id="home" class="home-section">
+        <!-- City Background 
+        <div class="background city-bg"></div>
+        <!-- Desert Background 
+        <div class="background desert-bg"></div>
+
+         <!-- Frame and Headshot Container 
+        <div class="frame-container">
+            <!-- Dubai Frame 
+            <img src="dubai-frame.png" alt="Dubai Frame" class="dubai-frame">
+            
+            <!-- Headshot inside Frame 
+            <img src="headshot.png" alt="Your Headshot" class="headshot">
+        </div>
+
+        <!-- UAE Flag 
+        <img src="uae-flag.png" alt="UAE Flag" class="uae-flag">
+    </section> -->
 
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
@@ -141,6 +162,104 @@
             </div>
         </div>
     </section>
+
+
+    <!-- CV Section
+    <section id="cv" class="cv-section">
+        <div class="container">
+            Name and Contact Info 
+            <h2 class="text-center animate-cv-header">John Doe
+                <p class="text-center small-details animate-cv-header">John Doe · 2000 · +123 456 7890 · <a href="https://www.linkedin.com/in/johndoe" target="_blank">LinkedIn</a></p>
+            </h2>
+            
+          
+            <p class="text-center bio animate-cv-bio">Aspiring graduate student with a dual major in Computer Engineering and Physics, interested in machine learning, cybersecurity, data visualization, robotics, and quantum computing.</p>
+
+           
+            <div class="cv-content">
+                
+                <div class="cv-section-item">
+                    <h3 class="cv-section-title">Education</h3>
+                    <div class="cv-section-header">
+                        <p>University of California, Berkeley</p>
+                        <p>Bachelor of Science in Data Science & Physics · 2019 - May 2023</p>
+                        <p>GPA: 3.90/4.00</p>
+                        <ul>
+                            <li>Relevant Coursework: Algebra, Geometry, Statistics, Robots, Penetration tools</li>
+                        </ul>
+                        <img src="uc-berkeley.jpg" alt="UC Berkeley" class="subpage-image">
+                    </div>
+                </div>
+
+                
+                <div class="cv-section-item">
+                    <h3 class="cv-section-title">Internships</h3>
+                    <div class="cv-section-header">
+                        <p>Tech Innovators Inc. · Data Analyst Intern</p>
+                        <p>August 2023 - Present</p>
+                        <ul>
+                            <li>Analyzed large datasets to extract actionable insights for product development teams</li>
+                            <li>Created comprehensive data visualizations to support strategic decision-making</li>
+                            <li>Collaborated with cross-functional teams to optimize data processes and reporting frameworks</li>
+                        </ul>
+                        <img src="data-analytics.jpg" alt="Data Analytics" class="subpage-image">
+                    </div>
+                </div>
+
+              
+                <div class="cv-section-item">
+                    <h3 class="cv-section-title">Projects</h3>
+                    <div class="cv-section-header">
+                        <p>Smart Home Automation System, UC Berkeley</p>
+                        <p>Spring 2023</p>
+                        <ul>
+                            <li>Developed a web-based home automation platform using Raspberry Pi and Arduino</li>
+                            <li>Implemented machine learning algorithms for predictive energy management</li>
+                        </ul>
+                        <img src="smart-home-automation.jpeg" alt="Smart Home Automation" class="subpage-image">
+                        <p>Watch the demo video: <a href="video-demo-link.mp4" target="_blank">Demo Video</a></p>
+                    </div>
+                </div>
+
+                
+                <div class="cv-section-item">
+                    <h3 class="cv-section-title">Presentations</h3>
+                    <div class="cv-section-header">
+                        <p>Robotics in Everyday Life: Enhancements and Challenges</p>
+                        <p>Berkeley | Spring 2022</p>
+                    </div>
+                </div>
+
+                
+                <div class="cv-section-item">
+                    <h3 class="cv-section-title">Skills</h3>
+                    <ul>
+                        <li>Languages: Python, Java, C++, HTML/CSS, JavaScript, R, SQL</li>
+                        <li>Frameworks & Tools: TensorFlow, Keras, Unity, Docker, Git, Tableau, Raspberry Pi, Arduino, MATLAB, Wireshark, AWS, VirtualBox</li>
+
+                        <div class="skills-images">
+                            <img src="python-logo.png" alt="Python" class="skills-logo">
+                            <img src="java-logo.png" alt="Java" class="skills-logo">
+                            <img src="javascript-logo.png" alt="JavaScript" class="skills-logo">
+                         
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+            
+            <div class="resume-download-button">
+                <a href="resume.pdf" class="btn btn-primary" download>Download Resume</a>
+            </div>
+        </div>
+    </section>
+   
+    <div id="popup-window" style="display:none;">
+        <div id="popup-content"></div>
+        <button id="close-popup">Close</button>
+    </div> -->
+
+
 
     <!-- CV Section -->
     <section id="cv" class="cv-section">
@@ -267,6 +386,44 @@
         <div id="popup-content"></div>
     </div>
 
+
+    <!-- Chatbot Section 
+    <section id="chatbot" class="chatbot-section">
+        <div class="container">
+            <h2 class="text-center">NLP Chatbot</h2>
+            <p class="text-center">Ask me about my background, skills, and projects!</p>
+
+            <!-- Chat Window 
+            <div id="chat-window" class="chatbox">
+                <div id="chat-log" class="chatbox-window">
+                    <!-- Friendly Welcome Message 
+                    <p class="welcome-message"><strong>Chatbot:</strong> Hi! I’m your personal portfolio assistant. Ask me about my projects or experience!</p>
+                </div>
+
+                <!-- User Input and Send Button 
+                <div class="chatbox-input">
+                    <input type="text" id="user-input" class="form-control" placeholder="Ask me anything about me!">
+                    <button id="send-btn" onclick="sendMessage()" class="btn btn-info mt-3">Send</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Popup Modal 
+    <div id="feedback-modal" class="feedback-modal">
+        <div class="feedback-content">
+            <h3>Feedback</h3>
+            <p>I don't know the answer. Please leave feedback below.</p>
+            <form id="feedback-form">
+                <input type="text" id="feedback-name" placeholder="Your Name" required>
+                <input type="email" id="feedback-email" placeholder="Your Email" required>
+                <input type="text" id="feedback-subject" placeholder="Subject" required>
+                <textarea id="feedback-message" placeholder="Your Message" required></textarea>
+                <button type="button" onclick="submitFeedback()" class="btn btn-primary mt-3">Submit Feedback</button>
+            </form>
+            <span class="close-btn" onclick="closeFeedbackModal()">&times;</span>
+        </div>
+    </div>-->
 
     <!-- Showcase Section -->
     <section id="showcase" class="showcase-section">
@@ -623,7 +780,7 @@
         
               <div class="container" data-aos="fade-up" data-aos-delay="100">
         
-                 <!-- <div class="row gy-4"> -->
+                <!-- <div class="row gy-4"> -->
         
                   <!-- <div class="col-md-6">
                     <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">
@@ -773,7 +930,7 @@
         });
 
     </script>
-
+                  
    <!-- JavaScript Files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
