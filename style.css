@@ -390,6 +390,11 @@ body {
     text-align: right;
 }
 
+.small-details {
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
 .section-line {
     border: none;
     height: 2px;
