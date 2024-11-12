@@ -131,6 +131,7 @@
   .contact .php-email-form {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     padding: 30px;
+    /* margin-top: 30px; */
     margin-top: -120px;
     background-color: #2c2c2e;
   }
