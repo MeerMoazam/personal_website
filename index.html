@@ -98,13 +98,13 @@
                     <p id="typewriter-intro">I’m a technologist specializing in AI, cybersecurity, and blockchain development. With years of experience in the field, I am committed to leveraging emerging technologies to solve real-world problems.</p>
                 </div>
                 
-                <div id="skills" class="col-md-12 text-center skills-section">
-                    <h4 class="animate-fadeIn">Skills & Technologies</h4>
+                <!-- <div id="skills" class="col-md-12 text-center skills-section">
+                    <h4 class="animate-fadeIn">Skills & Technologies</h4> -->
                     
                     <!-- Skill Icons Wrapper -->
-                    <div class="skill-icons-wrapper">
-                        <div class="skill-icons">
-                            <div class="skill-card">
+                    <!-- <div class="skill-icons-wrapper">
+                        <div class="skill-icons"> -->
+                            <!-- <div class="skill-card">
                                 <img src="python-logo.png" alt="Python" class="skills-logo">
                                 <p>Python</p>
                             </div>
@@ -139,13 +139,14 @@
                             <div class="skill-card">
                                 <img src="php-logo.png" alt="Blockchain" class="skills-logo">
                                 <p>PHP</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            </div> -->
+                        <!-- </div>
+                    </div> -->
+                <!-- </div> -->
 
                 <!-- Personal Story Section -->
                 <div class="col-md-12 text-center story-section">
+                    <h4 class="animate-fadeIn">Story</h4>
                     <p class="story-text">
                         From my early fascination with AI to my deep dive into blockchain technologies, I’ve always been passionate about finding the intersection between code and real-world solutions. 
                         I enjoy using my skills in cybersecurity, quantum computing, and networking to develop innovative solutions for tomorrow’s challenges.
@@ -265,7 +266,13 @@
         <div class="container">
             <!-- Header with Resume -->
             <h2 class="text-center animate-cv-header">John Doe
-                <p class="text-center small-details animate-cv-header">John Doe · 2000 · +123 456 7890 · <a href="https://www.linkedin.com/in/johndoe" target="_blank">LinkedIn</a></p>
+                <p class="text-center small-details animate-cv-header">John Doe · 2000 · +123 456 7890</p>
+                <div class="social-links">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-skype"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
             </h2>
 
             <p class="text-center bio animate-cv-bio">Aspiring graduate student with a dual major in Computer Engineering and Physics, interested in machine learning, cybersecurity, data visualization, robotics, and quantum computing.</p>
@@ -326,6 +333,30 @@
                 </div>
             </div>
 
+            <!-- Projects Section -->
+            <div class="cv-section-item">
+                <h3 class="cv-section-title">Projects</h3>
+                <hr class="section-line">
+                <div class="cv-section-content">
+                    <div class="left-align">
+                        <a href="#" class="clickable-title" onclick="openPopup('project1-popup')">Smart Home Automation System</a></br>
+                        <ul>
+                            <li>Developed a web-based home automation platform using Raspberry Pi and Arduino</li>
+                            <li>Implemented machine learning algorithms for predictive energy management</li>
+                        </ul>
+                        <a href="#" class="clickable-title" onclick="openPopup('project2-popup')">Blockchain Decentralized Finance</a>
+                        <ul>
+                            <li>Developed a web-based home automation platform using Raspberry Pi and Arduino</li>
+                            <li>Implemented machine learning algorithms for predictive energy management</li>
+                        </ul>
+                    </div>
+                    <div class="right-align">
+                        <p>Spring 2023</br></br></br>
+                        January 2023</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Presentations Section -->
             <div class="cv-section-item">
                 <h3 class="cv-section-title">Presentations</h3>
@@ -336,22 +367,6 @@
                     </div>
                     <div class="right-align">
                         <p>Berkeley | Spring 2022</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projects Section -->
-            <div class="cv-section-item">
-                <h3 class="cv-section-title">Projects</h3>
-                <hr class="section-line">
-                <div class="cv-section-content">
-                    <div class="left-align">
-                        <a href="#" class="clickable-title" onclick="openPopup('project1-popup')">Smart Home Automation System</a></br>
-                        <a href="#" class="clickable-title" onclick="openPopup('project2-popup')">Blockchain Decentralized Finance</a>
-                    </div>
-                    <div class="right-align">
-                        <p>Spring 2023</br>
-                        January 2023</p>
                     </div>
                 </div>
             </div>
@@ -369,7 +384,12 @@
                             <div class="skills-images">
                                 <img src="python-logo.png" alt="Python" class="skills-logo">
                                 <img src="java-logo.png" alt="Java" class="skills-logo">
-                                <img src="javascript-logo.png" alt="JavaScript" class="skills-logo">
+                                <img src="javascript-logo.png" alt="JavaScript" class="skills-logo">                               
+                                <img src="react-logo.png" alt="Blockchain" class="skills-logo">                                                        
+                                <img src="networking-logo.png" alt="Blockchain" class="skills-logo">                               
+                                <img src="HTML-logo.png" alt="Blockchain" class="skills-logo">                                
+                                <img src="CSS-logo.png" alt="Blockchain" class="skills-logo">                               
+                                <img src="php-logo.png" alt="Blockchain" class="skills-logo">                                  
                                 <!-- Add more skill logos as needed -->
                             </div>
                         </ul>
@@ -764,16 +784,18 @@
 
             <!-- Page Title -->
             <div class="page-title" data-aos="fade">
-              <div class="heading">
-                <div class="container">
-                  <div class="row d-flex justify-content-center text-center">
-                    <div class="col-lg-8">
-                      <h1>Contact</h1>
-                      <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+                <div class="heading">
+                    <div class="container">
+                        <div class="row d-flex justify-content-center text-center">
+                            <div class="col-lg-8">
+                                <h1>Contact</h1>
+                                <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-        
+            </div>
+            
             <!-- Contact Section -->
             <section class="contact section">
         
