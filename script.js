@@ -754,27 +754,27 @@ window.onload = startTypewriterEffect;
 
 
 // JavaScript for Horizontal Scrolling of Skills Section
-const skillIcons = document.querySelector('.skill-icons');
+// const skillIcons = document.querySelector('.skill-icons');
 
 // Mouse wheel scroll (desktop)
-skillIcons.addEventListener('wheel', (event) => {
-    event.preventDefault();
-    skillIcons.scrollLeft += event.deltaY;  // Horizontal scroll
-});
+// skillIcons.addEventListener('wheel', (event) => {
+//     event.preventDefault();
+//     skillIcons.scrollLeft += event.deltaY;  // Horizontal scroll
+// });
 
 // Touch scroll (mobile)
-let startX;
+// let startX;
 
-skillIcons.addEventListener('touchstart', (event) => {
-    startX = event.touches[0].pageX;
-});
+// skillIcons.addEventListener('touchstart', (event) => {
+//     startX = event.touches[0].pageX;
+// });
 
-skillIcons.addEventListener('touchmove', (event) => {
-    const touchX = event.touches[0].pageX;
-    const scrollAmount = startX - touchX;
-    skillIcons.scrollLeft += scrollAmount;
-    startX = touchX;
-});
+// skillIcons.addEventListener('touchmove', (event) => {
+//     const touchX = event.touches[0].pageX;
+//     const scrollAmount = startX - touchX;
+//     skillIcons.scrollLeft += scrollAmount;
+//     startX = touchX;
+// });
 
 
 // Story Animation - Trigger on Scroll
@@ -825,7 +825,11 @@ function openPopup(popupId) {
         content = `
             <img src="data-analytics.jpg" alt="Experience Image" style="width:100%; margin-top:20px;">
             <h3>Data Analyst Intern at Tech Innovators</h3>
-            <p>Details about the Data Analyst position.</p>
+                <ul>
+                    <li>Analyzed large datasets to extract actionable insights for product development teams</li>
+                    <li>Created comprehensive data visualizations to support strategic decision-making</li>
+                    <li>Collaborated with cross-functional teams to optimize data processes and reporting frameworks</li>
+                </ul>
             <p>Duration: June 2024 - July 2024</p>
         `;
     } else if (popupId === 'presentations-popup') {
