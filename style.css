@@ -624,6 +624,7 @@ body {
     padding: 0px;
     margin-top: auto;
     margin-bottom: auto;
+    min-height: auto;
     animation: fadeInUp 1s ease-out;  /* Add animation on scroll */
 }
 
