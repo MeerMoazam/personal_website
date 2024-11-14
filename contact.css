@@ -127,14 +127,23 @@
   .contact .info-item .social-links a:hover {
     color: var(--accent-color);
   }
+
+.contact.section {
+    padding: 0; /* Remove padding */
+    height: auto; /* Set height based on content */
+    display: flex;
+    align-items: flex-start; /* Align to the top */
+    justify-content: center;
+    background-color: var(--background-color);
+    overflow: hidden; /* Prevent extra space */
+    min-height: auto;
+}
   
   .contact .php-email-form {
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    /* margin-top: 30px; */
-    margin-top: -250px;
-    background-color: #2c2c2e;
-  }
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+  background-color: #2c2c2e;
+}
   
   @media (max-width: 575px) {
     .contact .php-email-form {
@@ -152,6 +161,7 @@
     padding: 10px 15px;
     box-shadow: none;
     border-radius: 0;
+    margin-bottom: 5px;
   }
   
   .contact .php-email-form input[type=text]:focus,
